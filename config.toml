@@ -1,4 +1,4 @@
-baseurl = "http://www.alspur.com"
+baseurl = "https://www.alspur.com"
 languageCode = "en-us"
 title = "@alspur"
 theme = "hugo-lithium-theme"
