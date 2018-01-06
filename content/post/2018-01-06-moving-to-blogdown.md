@@ -1,6 +1,6 @@
-# ---
+---
 title: Moving to Blogdown
-date: 2018-01-06T09:42:26 -0500
+date: 2018-01-06T09:42:26-05:00
 slug: moving-to-blogdown
 ---
 
