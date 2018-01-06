@@ -4,7 +4,7 @@ date: 2018-01-06T09:42:26-05:00
 slug: moving-to-blogdown
 ---
 
-A few months ago, RStudio announced the release of [’blogdown'](https://github.com/rstudio/blogdown), a package that allows you to generate and maintain a Hugo blog using R and RStudio. I’ve hosted my blog on Github Pages using Jekyll for a few years, but the opportunity to make my blog more R-friendly was really appealing. I downloaded the package and started tinkering with the stock template. 
+A few months ago, RStudio announced the release of [`blogdown`](https://github.com/rstudio/blogdown), a package that allows you to generate and maintain a Hugo blog using R and RStudio. I’ve hosted my blog on Github Pages using Jekyll for a few years, but the opportunity to make my blog more R-friendly was really appealing. I downloaded the package and started tinkering with the stock template. 
 
 Since I wrote all of my blog posts in markdown, it was easy to add my posts to the stock Hugo theme in `blogdown`  and immediately see my content rendered via Hugo. It would have been easy for me to flip the switch and get a new version of my blog up and running on Github Pages, but I wasn’t fully satisfied with any of the available themes. I know enough HTML and CSS to be dangerous, but not enough to create a working custom Hugo theme in an afternoon. 
 
