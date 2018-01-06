@@ -2,7 +2,7 @@
 
 <main class="content" role="main">
 
-    {{ range  (first 5 (where .Data.Pages "Section" "post")).GroupByDate "January 6, 2006" }}
+    {{ range  (first 5 (where .Data.Pages "Section" "post")).GroupByDate "January 2, 2006" }}
     
      <h2 class="archive-title">{{ .Key }}</h2>
 
