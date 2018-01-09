@@ -6,10 +6,29 @@
     <description>Recent content on @alspur</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Nov 2017 08:21:00 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Marble Game in R</title>
+      <link>/marble-game-in-r/</link>
+      <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/marble-game-in-r/</guid>
+      <description>The college football playoff selection process is broken. The current College Football Playoff (CFP) was created to address the shortcomings of the Bowl Championship Series (BCS). Under the BCS system, a combination of polls and computer rankings were used to select two teams to play for the national championship. The controversial nature of the BCS system is well-documented, but its greatest flaw was allowing a season to end with an undefeated team that did not have a chance to play for a championship.</description>
+    </item>
+    
+    <item>
+      <title>Moving to Blogdown</title>
+      <link>/moving-to-blogdown/</link>
+      <pubDate>Sat, 06 Jan 2018 09:42:26 -0500</pubDate>
+      
+      <guid>/moving-to-blogdown/</guid>
+      <description>A few months ago, RStudio announced the release of blogdown, a package that allows you to generate and maintain a Hugo blog using R and RStudio. I’ve hosted my blog on Github Pages using Jekyll for a few years, but the opportunity to make my blog more R-friendly was really appealing. I downloaded the package and started tinkering with the stock template.
+Since I wrote all of my blog posts in markdown, it was easy to add my posts to the stock Hugo theme in blogdown and immediately see my content rendered via Hugo.</description>
+    </item>
     
     <item>
       <title>Management Quality in Public Education</title>
@@ -418,7 +437,7 @@ On top of this labyrinthine system, non-traditional public schools (including ma
       
       <guid>/projects/</guid>
       <description>Some of the stuff I&amp;rsquo;ve worked on includes:
- kysrc, an R package with Kentucky School Report Card data from 2012-2017 More to come&amp;hellip;  </description>
+ kysrc, an R package with Kentucky School Report Card data from 2012-2017. There&amp;rsquo;s too much data in to be hosted on CRAN, but you can install it with devtools by running this command: devtools::install_github(&amp;quot;alspur/kysrc&amp;quot;) Collaborative Analysis Development in Education Agencies, part of my capstone project for the Strategic Data Project Fellowsihp. More to come&amp;hellip;  </description>
     </item>
     
   </channel>

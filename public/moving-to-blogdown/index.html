@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="generator" content="Hugo 0.30.2" />
+
+
+<title>Moving to Blogdown - @alspur</title>
+<meta property="og:title" content="Moving to Blogdown - @alspur">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/alspur_logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/projects/">Projects</a></li>
+    
+    <li><a href="/archive/">Archive</a></li>
+    
+    <li><a href="/files/spurrier_resume.pdf/">Resume</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+
+    <h2 class="article-title">Moving to Blogdown
+    
+      
+    
+    </h1>
+    
+    
+    <div class="article-date">January 6, 2018</div>
+    
+    
+
+    <div class="article-content">
+      <p>A few months ago, RStudio announced the release of <a href="https://github.com/rstudio/blogdown"><code>blogdown</code></a>, a package that allows you to generate and maintain a Hugo blog using R and RStudio. I’ve hosted my blog on Github Pages using Jekyll for a few years, but the opportunity to make my blog more R-friendly was really appealing. I downloaded the package and started tinkering with the stock template.</p>
+
+<p>Since I wrote all of my blog posts in markdown, it was easy to add my posts to the stock Hugo theme in <code>blogdown</code>  and immediately see my content rendered via Hugo. It would have been easy for me to flip the switch and get a new version of my blog up and running on Github Pages, but I wasn’t fully satisfied with any of the available themes. I know enough HTML and CSS to be dangerous, but not enough to create a working custom Hugo theme in an afternoon.</p>
+
+<p>Every few weeks since the initial announcement of <code>blogdown</code>, I tinkered around with customizing a Hugo theme for my blog, but didn’t really commit the time to get it done until the week between Christmas and New Year. Starting with <a href="https://github.com/yihui/hugo-lithium-theme"><code>blogdown creator</code> Yihui’s version of the Lithium theme</a> and using <a href="https://github.com/jsonbecker/jsonbecker-hugo">Jason Becker’s json.blog theme</a> as a guide, I took some of the concepts from my old blog and created my own twist on a Hugo theme. Yihui’s <a href="https://bookdown.org/yihui/blogdown/"><code>blogdown</code> book</a> helped me to really understand the underpinnings of how <code>blogdown</code> works and how to get my blog hosted on <a href="http://www.netlify.com">Netlify</a>.</p>
+
+<p>The ability to host my blog on Netlify was a big selling point for me. Not only did it allow my blog to use HTTPS (a benefit unavailable to users of Github Pages), it also allowed me to simply push source files to Github and it would render the site update <em>automatically</em>. I loved this feature with Github Pages and Jekyll and it was a must-have for me to make the switch to <code>blogdown</code> and Hugo. This feature allows me to create and publish a post from my iPhone or one of my iPads (<a href="https://www.relay.fm/cortex/27">#multipadlifestyle</a>) - no laptop required. In fact, this post started on my iPhone via <a href="https://agiletortoise.com/drafts/">Drafts</a>, then moved to <a href="https://ulyssesapp.com">Ulysses</a> and was published via <a href="https://workflow.is">Workflow</a> and <a href="https://workingcopyapp.com">Working Copy</a> on my iPad Pro. A good deal of my writing will be done in R Markdown moving forward, but I love having the ability to publish with an entirely iOS workflow.</p>
+
+<p>The <code>blogdown</code> version of my blog is up and running, and I’m really happy with the results. If you’re an R user and want to either start a blog or are thinking about a move from Jekyll to Hugo, I’d <em>highly</em> recommend using <code>blogdown</code>.</p>
+
+    </div>
+    
+  </article>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          
+            <a href = "http://www.github.com/alspur"><font color="3c3e40"><i class="fa fa-github-alt"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.linkedin.com/in/alspur"><font color="3c3e40"><i class="fa fa-linkedin"></i></a></font>
+          </li>
+          <li>
+            <a href = "mailto:alex.spurrier@gmail.com"><font color="3c3e40"><i class="fa fa-envelope-o"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.instagram.com/alspur"><font color="3c3e40"><i class="fa fa-instagram"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.twitter.com/alspur"><font color="3c3e40"><i class="fa fa-twitter"></i></a></font>
+          </li>
+        
+            
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-56149120-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

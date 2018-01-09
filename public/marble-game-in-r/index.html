@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="generator" content="Hugo 0.30.2" />
+
+
+<title>The Marble Game in R - @alspur</title>
+<meta property="og:title" content="The Marble Game in R - @alspur">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/alspur_logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/projects/">Projects</a></li>
+    
+    <li><a href="/archive/">Archive</a></li>
+    
+    <li><a href="/files/spurrier_resume.pdf/">Resume</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+
+    <h2 class="article-title">The Marble Game in R
+    
+      
+    
+    </h1>
+    
+    
+    <div class="article-date">January 9, 2018</div>
+    
+    
+
+    <div class="article-content">
+      <p>The college football playoff selection process is broken. The current <a href="https://en.wikipedia.org/wiki/College_Football_Playoff">College Football Playoff (CFP)</a> was created to address the shortcomings of the <a href="https://en.wikipedia.org/wiki/Bowl_Championship_Series">Bowl Championship Series (BCS)</a>. Under the BCS system, a combination of polls and computer rankings were used to select two teams to play for the national championship. The <a href="https://en.wikipedia.org/wiki/Bowl_Championship_Series_controversies">controversial nature of the BCS system is well-documented</a>, but its greatest flaw was allowing a season to end with an undefeated team that did not have a chance to play for a championship.</p>
+<p>The CFP was created to address the major problems of the BCS. Instead of using polls and computer takings to determine two teams to play for a national championship, the CFP relies on a selection committee to create a four-team playoff each year to determine the national champion. The selection committee’s ability to apply more subjective criteria was intended to prevent BCS-style controversy, but the past two seasons (2016-2017 and 2017-2018) led to <a href="https://en.wikipedia.org/wiki/College_Football_Playoff#Criticism">similar controversy surrounding the selection of teams</a>. In a throwback to the BCS days, the 2017-2018 college football season ended with an undefeated team (Central Florida) that was not allowed to compete in the CFP.</p>
+<p>In response to the flaws of the CFP system, <a href="https://www.twitter.com/iowahawkblog">David Burge</a> proposed an easy-to-comprehend alternative approach to determine which NCAA football teams would be invited to the four-team playoff called the “Marble Game.” The motivation behind the Marble Game is clear:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The point of the <a href="https://twitter.com/hashtag/MarbleGame?src=hash&amp;ref_src=twsrc%5Etfw">#MarbleGame</a> is that CFB playoff selection could be simple, open, &amp; transparent, not backroom committees lobbying for the outcome of a beauty contest.</p>&mdash; David Burge (@iowahawkblog) <a href="https://twitter.com/iowahawkblog/status/937352469511835650?ref_src=twsrc%5Etfw">December 3, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>The rules of the Marble Game are simple:</p>
+<ul>
+<li>Each team starts with a pre-determined amount of marbles.</li>
+<li>If a team wins a home game, they take 20% of the loser’s marbles.</li>
+<li>If a team wins a road game, they take 25% of the loser’s marbles.</li>
+<li>Neutral site games are treated as home wins for the victor (20% marble transfer).</li>
+<li>At the end of the season, the four teams with the most marbles are invited to participate in the CFP.</li>
+</ul>
+<p>Using these rules, I created an R package, <a href="https://www.github.com/alspur/marblr"><code>marblr</code></a>, to simulate the results of the Marble Game. The <code>marblr</code> package uses game data scraped from <a href="https://www.masseyratings.com/data.php">Massey Ratings</a> to simulate the Marble Game using Burge’s rules. Additionally, the <code>marblr</code> package allows for simulations that grant extra weight to teams from the <a href="https://en.wikipedia.org/wiki/Power_Five_conferences">Power Five conferences (ACC, Big 12, Big Ten, Pac-12, SEC, plus Notre Dame)</a>. As a default, teams from the Power Five start with 120 marbles, while all other teams start with 100.</p>
+<div id="the-2017-2018-marble-game" class="section level2">
+<h2>The 2017-2018 Marble Game</h2>
+<p><img src="/post/2018-01-09-marble-game-in-r_files/figure-html/marble-plot-1.png" width="672" /></p>
+<p>The plot above illustrates the outcome of the Marble Game for each NCAA Division I FBS football team<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. The first ten weeks of the season are very noisy - it’s hard to discern a clear top tier of teams - but a distinct cohort of competitive teams begins to separate from the pack between weeks 10 and 15. At the end of week 15, conference championships have been played and final bowl and CFP selections are made.</p>
+<p>We know that Alabama, Georgia, Clemson, and Oklahoma were selected to play in the CFP for the 2017-2018 season, but which teams would have been invited to the CFP via the Marble Game?</p>
+<p><img src="/post/2018-01-09-marble-game-in-r_files/figure-html/marble-plot-cfp-teams-1.png" width="672" /></p>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 1: </span>Marble Rankings after Week 15</caption>
+<thead>
+<tr class="header">
+<th align="center">Rank</th>
+<th align="left">Team</th>
+<th align="right">Marbles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">Clemson</td>
+<td align="right">425</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">Ohio St</td>
+<td align="right">405</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">Oklahoma</td>
+<td align="right">405</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left">UCF</td>
+<td align="right">385</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="left">Georgia</td>
+<td align="right">378</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="left">USC</td>
+<td align="right">353</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="left">Alabama</td>
+<td align="right">327</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="left">Wisconsin</td>
+<td align="right">310</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">Auburn</td>
+<td align="right">274</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="left">Miami FL</td>
+<td align="right">256</td>
+</tr>
+</tbody>
+</table>
+<p>According to the Marble Game, Ohio State and Central Florida (the lone undefeated team) would have received CFP invites over Georgia and Alabama - teams that both won their first-round CFP games and made the national championship game in 2017-2018. Knowing what we know now, it would be silly to have excluded Alabama and Georgia from the CFP.</p>
+<p>Ideally, the Marble Game would be used to determine teams for an 8-team college football playoff. Under this system, each Power Five conference has a strong chance for their champion to make the playoff. Conferences with more strength at the top (like the SEC and Big Ten in 2017-2018) would be able to send multiple teams to the playoff based on their marble count. Such a playoff would have created the following first-round games:</p>
+<ul>
+<li>Clemson (1 seed, ACC) vs. Wisconsin (8 seed, Big Ten)</li>
+<li>Ohio State (2 seed, Big Ten) vs. Alabama (7 seed, SEC)</li>
+<li>Oklahoma (3 seed, Big 12) vs. USC (6 seed, Pac-12)</li>
+<li>UCF (4 seed, AAC) vs. Georgia (5 seed, SEC)</li>
+</ul>
+<p>This bracket would resolve the controversy following this year’s selections. Each major conference is represented, stronger conferences have multiple contenders, and a non-Power Five team was able to enter based on the marbles they accumulated through an undefeated regular season.</p>
+</div>
+<div id="moving-forward" class="section level2">
+<h2>Moving forward</h2>
+<p>College football deserves a better process for determining a national champion. There are simply too many seasons with more than four teams with a solid case to compete in a playoff. While the calendar and physical constraints prevent the development of a March Madness-style bracket in college football, expanding the CFP to an 8-team format could mitigate most of the controversy generated under past systems.</p>
+<p>The CFP could continue their process of a selection committee, but the Marble Game is an attractive substitute. It places more weight and importance on winning late-season games - games that are either conference championships or rivalry games. It also would discourage programs from scheduling “cupcake” games; playing strong opponents would mean more opportunity to increase your marble count. Most importantly, the criteria for advancing to the playoff would be transparent, consistent, and fair to all teams.</p>
+<p>It’ll never happen, but it’s a fun idea to consider.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The only games that count for the purposes of the Marble Game are games between FBS teams - Alabama’s 56-0 drubbing of Mercer provides no useful information about Alabama’s potential to contend for a national title.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+    
+  </article>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          
+            <a href = "http://www.github.com/alspur"><font color="3c3e40"><i class="fa fa-github-alt"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.linkedin.com/in/alspur"><font color="3c3e40"><i class="fa fa-linkedin"></i></a></font>
+          </li>
+          <li>
+            <a href = "mailto:alex.spurrier@gmail.com"><font color="3c3e40"><i class="fa fa-envelope-o"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.instagram.com/alspur"><font color="3c3e40"><i class="fa fa-instagram"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.twitter.com/alspur"><font color="3c3e40"><i class="fa fa-twitter"></i></a></font>
+          </li>
+        
+            
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-56149120-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

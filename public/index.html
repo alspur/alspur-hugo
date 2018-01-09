@@ -65,7 +65,157 @@
 
     
     
-     <h2 class="archive-title">November 11, 2017</h2>
+     <h2 class="archive-title">January 9, 2018</h2>
+
+    
+    <article class="article">
+      <a href="/marble-game-in-r/" class="archive-item-link">The Marble Game in R</a>
+      
+       
+     
+     <div class="article-content">
+        
+     <p>The college football playoff selection process is broken. The current <a href="https://en.wikipedia.org/wiki/College_Football_Playoff">College Football Playoff (CFP)</a> was created to address the shortcomings of the <a href="https://en.wikipedia.org/wiki/Bowl_Championship_Series">Bowl Championship Series (BCS)</a>. Under the BCS system, a combination of polls and computer rankings were used to select two teams to play for the national championship. The <a href="https://en.wikipedia.org/wiki/Bowl_Championship_Series_controversies">controversial nature of the BCS system is well-documented</a>, but its greatest flaw was allowing a season to end with an undefeated team that did not have a chance to play for a championship.</p>
+<p>The CFP was created to address the major problems of the BCS. Instead of using polls and computer takings to determine two teams to play for a national championship, the CFP relies on a selection committee to create a four-team playoff each year to determine the national champion. The selection committee’s ability to apply more subjective criteria was intended to prevent BCS-style controversy, but the past two seasons (2016-2017 and 2017-2018) led to <a href="https://en.wikipedia.org/wiki/College_Football_Playoff#Criticism">similar controversy surrounding the selection of teams</a>. In a throwback to the BCS days, the 2017-2018 college football season ended with an undefeated team (Central Florida) that was not allowed to compete in the CFP.</p>
+<p>In response to the flaws of the CFP system, <a href="https://www.twitter.com/iowahawkblog">David Burge</a> proposed an easy-to-comprehend alternative approach to determine which NCAA football teams would be invited to the four-team playoff called the “Marble Game.” The motivation behind the Marble Game is clear:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The point of the <a href="https://twitter.com/hashtag/MarbleGame?src=hash&amp;ref_src=twsrc%5Etfw">#MarbleGame</a> is that CFB playoff selection could be simple, open, &amp; transparent, not backroom committees lobbying for the outcome of a beauty contest.</p>&mdash; David Burge (@iowahawkblog) <a href="https://twitter.com/iowahawkblog/status/937352469511835650?ref_src=twsrc%5Etfw">December 3, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>The rules of the Marble Game are simple:</p>
+<ul>
+<li>Each team starts with a pre-determined amount of marbles.</li>
+<li>If a team wins a home game, they take 20% of the loser’s marbles.</li>
+<li>If a team wins a road game, they take 25% of the loser’s marbles.</li>
+<li>Neutral site games are treated as home wins for the victor (20% marble transfer).</li>
+<li>At the end of the season, the four teams with the most marbles are invited to participate in the CFP.</li>
+</ul>
+<p>Using these rules, I created an R package, <a href="https://www.github.com/alspur/marblr"><code>marblr</code></a>, to simulate the results of the Marble Game. The <code>marblr</code> package uses game data scraped from <a href="https://www.masseyratings.com/data.php">Massey Ratings</a> to simulate the Marble Game using Burge’s rules. Additionally, the <code>marblr</code> package allows for simulations that grant extra weight to teams from the <a href="https://en.wikipedia.org/wiki/Power_Five_conferences">Power Five conferences (ACC, Big 12, Big Ten, Pac-12, SEC, plus Notre Dame)</a>. As a default, teams from the Power Five start with 120 marbles, while all other teams start with 100.</p>
+<div id="the-2017-2018-marble-game" class="section level2">
+<h2>The 2017-2018 Marble Game</h2>
+<p><img src="/post/2018-01-09-marble-game-in-r_files/figure-html/marble-plot-1.png" width="672" /></p>
+<p>The plot above illustrates the outcome of the Marble Game for each NCAA Division I FBS football team<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. The first ten weeks of the season are very noisy - it’s hard to discern a clear top tier of teams - but a distinct cohort of competitive teams begins to separate from the pack between weeks 10 and 15. At the end of week 15, conference championships have been played and final bowl and CFP selections are made.</p>
+<p>We know that Alabama, Georgia, Clemson, and Oklahoma were selected to play in the CFP for the 2017-2018 season, but which teams would have been invited to the CFP via the Marble Game?</p>
+<p><img src="/post/2018-01-09-marble-game-in-r_files/figure-html/marble-plot-cfp-teams-1.png" width="672" /></p>
+<table>
+<caption><span id="tab:unnamed-chunk-2">Table 1: </span>Marble Rankings after Week 15</caption>
+<thead>
+<tr class="header">
+<th align="center">Rank</th>
+<th align="left">Team</th>
+<th align="right">Marbles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">Clemson</td>
+<td align="right">425</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">Ohio St</td>
+<td align="right">405</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">Oklahoma</td>
+<td align="right">405</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left">UCF</td>
+<td align="right">385</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="left">Georgia</td>
+<td align="right">378</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="left">USC</td>
+<td align="right">353</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="left">Alabama</td>
+<td align="right">327</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="left">Wisconsin</td>
+<td align="right">310</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">Auburn</td>
+<td align="right">274</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="left">Miami FL</td>
+<td align="right">256</td>
+</tr>
+</tbody>
+</table>
+<p>According to the Marble Game, Ohio State and Central Florida (the lone undefeated team) would have received CFP invites over Georgia and Alabama - teams that both won their first-round CFP games and made the national championship game in 2017-2018. Knowing what we know now, it would be silly to have excluded Alabama and Georgia from the CFP.</p>
+<p>Ideally, the Marble Game would be used to determine teams for an 8-team college football playoff. Under this system, each Power Five conference has a strong chance for their champion to make the playoff. Conferences with more strength at the top (like the SEC and Big Ten in 2017-2018) would be able to send multiple teams to the playoff based on their marble count. Such a playoff would have created the following first-round games:</p>
+<ul>
+<li>Clemson (1 seed, ACC) vs. Wisconsin (8 seed, Big Ten)</li>
+<li>Ohio State (2 seed, Big Ten) vs. Alabama (7 seed, SEC)</li>
+<li>Oklahoma (3 seed, Big 12) vs. USC (6 seed, Pac-12)</li>
+<li>UCF (4 seed, AAC) vs. Georgia (5 seed, SEC)</li>
+</ul>
+<p>This bracket would resolve the controversy following this year’s selections. Each major conference is represented, stronger conferences have multiple contenders, and a non-Power Five team was able to enter based on the marbles they accumulated through an undefeated regular season.</p>
+</div>
+<div id="moving-forward" class="section level2">
+<h2>Moving forward</h2>
+<p>College football deserves a better process for determining a national champion. There are simply too many seasons with more than four teams with a solid case to compete in a playoff. While the calendar and physical constraints prevent the development of a March Madness-style bracket in college football, expanding the CFP to an 8-team format could mitigate most of the controversy generated under past systems.</p>
+<p>The CFP could continue their process of a selection committee, but the Marble Game is an attractive substitute. It places more weight and importance on winning late-season games - games that are either conference championships or rivalry games. It also would discourage programs from scheduling “cupcake” games; playing strong opponents would mean more opportunity to increase your marble count. Most importantly, the criteria for advancing to the playoff would be transparent, consistent, and fair to all teams.</p>
+<p>It’ll never happen, but it’s a fun idea to consider.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The only games that count for the purposes of the Marble Game are games between FBS teams - Alabama’s 56-0 drubbing of Mercer provides no useful information about Alabama’s potential to contend for a national title.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+      
+    </div>
+      </article> 
+      <hr>
+    
+    
+    
+     <h2 class="archive-title">January 6, 2018</h2>
+
+    
+    <article class="article">
+      <a href="/moving-to-blogdown/" class="archive-item-link">Moving to Blogdown</a>
+      
+       
+     
+     <div class="article-content">
+        
+     <p>A few months ago, RStudio announced the release of <a href="https://github.com/rstudio/blogdown"><code>blogdown</code></a>, a package that allows you to generate and maintain a Hugo blog using R and RStudio. I’ve hosted my blog on Github Pages using Jekyll for a few years, but the opportunity to make my blog more R-friendly was really appealing. I downloaded the package and started tinkering with the stock template.</p>
+
+<p>Since I wrote all of my blog posts in markdown, it was easy to add my posts to the stock Hugo theme in <code>blogdown</code>  and immediately see my content rendered via Hugo. It would have been easy for me to flip the switch and get a new version of my blog up and running on Github Pages, but I wasn’t fully satisfied with any of the available themes. I know enough HTML and CSS to be dangerous, but not enough to create a working custom Hugo theme in an afternoon.</p>
+
+<p>Every few weeks since the initial announcement of <code>blogdown</code>, I tinkered around with customizing a Hugo theme for my blog, but didn’t really commit the time to get it done until the week between Christmas and New Year. Starting with <a href="https://github.com/yihui/hugo-lithium-theme"><code>blogdown creator</code> Yihui’s version of the Lithium theme</a> and using <a href="https://github.com/jsonbecker/jsonbecker-hugo">Jason Becker’s json.blog theme</a> as a guide, I took some of the concepts from my old blog and created my own twist on a Hugo theme. Yihui’s <a href="https://bookdown.org/yihui/blogdown/"><code>blogdown</code> book</a> helped me to really understand the underpinnings of how <code>blogdown</code> works and how to get my blog hosted on <a href="http://www.netlify.com">Netlify</a>.</p>
+
+<p>The ability to host my blog on Netlify was a big selling point for me. Not only did it allow my blog to use HTTPS (a benefit unavailable to users of Github Pages), it also allowed me to simply push source files to Github and it would render the site update <em>automatically</em>. I loved this feature with Github Pages and Jekyll and it was a must-have for me to make the switch to <code>blogdown</code> and Hugo. This feature allows me to create and publish a post from my iPhone or one of my iPads (<a href="https://www.relay.fm/cortex/27">#multipadlifestyle</a>) - no laptop required. In fact, this post started on my iPhone via <a href="https://agiletortoise.com/drafts/">Drafts</a>, then moved to <a href="https://ulyssesapp.com">Ulysses</a> and was published via <a href="https://workflow.is">Workflow</a> and <a href="https://workingcopyapp.com">Working Copy</a> on my iPad Pro. A good deal of my writing will be done in R Markdown moving forward, but I love having the ability to publish with an entirely iOS workflow.</p>
+
+<p>The <code>blogdown</code> version of my blog is up and running, and I’m really happy with the results. If you’re an R user and want to either start a blog or are thinking about a move from Jekyll to Hugo, I’d <em>highly</em> recommend using <code>blogdown</code>.</p>
+
+      
+    </div>
+      </article> 
+      <hr>
+    
+    
+    
+     <h2 class="archive-title">November 20, 2017</h2>
 
     
     <article class="article">
@@ -100,6 +250,11 @@
     </div>
       </article> 
       <hr>
+    
+    
+    
+     <h2 class="archive-title">November 14, 2017</h2>
+
     
     <article class="article">
       <a href="/measuring-success-in-education/" class="archive-item-link">Measuring Success in Education</a>
@@ -136,7 +291,7 @@
     
     
     
-     <h2 class="archive-title">July 7, 2017</h2>
+     <h2 class="archive-title">July 27, 2017</h2>
 
     
     <article class="article">
@@ -174,251 +329,6 @@
       </article> 
       <hr>
     
-    <article class="article">
-      <a href="/how-long-is-your-project/" class="archive-item-link">How long is your project?</a>
-      
-       
-     
-     <div class="article-content">
-        
-     <p>Two years ago, we sold our house in Branford - a beautiful shoreline town just east of New Haven - and moved to Kentucky. Of all the things that we could miss about our life in Connecticut, like lobster rolls or getting Patriots games on broadcast channels, what we miss most is the tight-knit community in Branford. We couldn’t go to the grocery store or get an ice cream cone without chatting with a neighbor, a family from a lacrosse team I coached, or someone from our gym.</p>
-
-<p>Last Friday, that community experienced a tragic loss: a 10 year old boy drowned in the Branford River. We woke up to the details of this event on Saturday morning. My wife turned to me and said, “It’s Ben.”</p>
-
-<hr />
-
-<p>Ben, number two of Dave’s three sons, at only 10 years old was an impressive athlete and just a wonderful person to be around. He has the kind of smile that once you see, you can’t forget it.</p>
-
-<p>I briefly coached Ben in lacrosse. There were a few times my U11 team was short on players, so Ben and his older brother played up an age group so we could field a full team. Even though he was the youngest on the field, Ben played with a courage, confidence, and athleticism that made him stand out.</p>
-
-<p>More than knowing Ben as an athlete, we got to know Ben’s family. His father, Dave, is a coach at the gym we attended and a handyman that helped us remodel our kitchen. As Dave was hanging drywall, Ben and his older brother played in our living room and yard. Anyone that spent a few minutes with the Callahans would walk away knowing that they are a family that exudes joy, energy, and love.</p>
-
-<hr />
-
-<p>All weekend, the incredible pain and grief of our Branford friends dominated our Facebook feeds. Those who know the Callahans from the gym, youth sports, and Sliney Elementary shared their sorrow over this tragic loss and their support for the Callahan family during this time.</p>
-
-<p>Last night, the Branford Town Green lived up to its role as the heart of the community. Thousands of people showed up to celebrate Ben’s life. Thanks to the reporting of Steve at <a href="http://www.branfordseven.com">BranfordSeven.com</a>, I was able to watch a live stream of the ceremony.</p>
-
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FBranfordSeven%2Fvideos%2F1696802467015175%2F&show_text=0&width=560" width="560" height="316" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-
-<p>The Branford First Selectman, the Branford Public Schools Superintendent, coaches, teachers, and friends all stood up to speak about the impact Ben had on their lives. Two young men shared what they learned from Ben:</p>
-
-<ol>
-<li>Never give up.</li>
-<li>Always hug your friends.</li>
-</ol>
-
-<p>They then asked the thousands in attendance to hug their neighbors. Everyone did. It was Branford at its best: loving and united.</p>
-
-<hr />
-
-<p>One hour, nineteen minutes, and thirty seconds into the live stream, Ben’s father Dave stood up and spoke. He spoke for about 10 minutes - it’s worth watching all of it. He closed with the following:</p>
-
-<blockquote>
-<p>Ben was given a 10 year project. God knew that before he made the world. He knew exactly what he had for Ben to do. He knew exactly how long it was going to take and man, did he kill it - he was awesome!</p>
-
-<p>But I want you guys to ask yourselves a question: how long is your project? How long is it going to take?</p>
-
-<p>If Ben had postponed his decision for Jesus until he was in high school, or done with college, or when he got married and had kids, then he would have missed it. So I want you guys to search your heart and look for that daily relationship. It’s not religion - it’s a relationship.</p>
-
-<p>The walk into eternity that Ben took on Friday was determined not by his actions, but by his decision. As much as I love him and always will, I know that God loves him more. He loves everybody here in this audience so much that he was willing to watch his son die and I’ll tell you right now, after going through it, it’s not something I would do voluntarily.</p>
-
-<p>If Ben’s earthly life lasted 10 years, 6 months, and 15 days after it started and then he continues in Heaven, that’s brilliant, that’s beautiful. But if one person here, or ten people, or a thousand people here are moved to search their hearts and establish their relationship with Jesus or truly commit to it and they join Ben in Heaven when they go, then this is truly worth it.</p>
-
-<p>Thank you so much guys, I’m so blessed to have you all here.</p>
-</blockquote>
-
-<p>Dave spoke with so much love, gratitude, and clarity that it’s hard for me to fathom given the pain he’s experiencing. For me, it’s difficult to understand how he could speak so eloquently in the wake of such an emotional tragedy without God’s help. It was one of the greatest displays of strength I’ve ever seen.</p>
-
-<p>I’m taking up Dave’s challenge. I’m searching my heart, and for the first time in a long time, I opened my Bible this morning and prayed. I prayed for Ben, for Dave and the Callahan family, and everyone else touched by Ben’s brief, brilliant life.</p>
-
-<p>Seeing a jersey with the number 2 will always be a reminder of the joy and love Ben Callahan exuded. He did a heck of a job making an impact on his community in the 10 years, 6 months, and 15 days we got to share with him.</p>
-
-<p>How long is your project?</p>
-
-<hr />
-
-<p>If you&rsquo;d like to support the Callahans:</p>
-
-<ul>
-<li><a href="https://www.gofundme.com/ben-callahan-memorial-fund">Donate via GoFundMe</a></li>
-<li><a href="https://www.mealtrain.com/trains/821v65/donate/">Donate and/or sign up for meal delivery via MealTrain</a></li>
-</ul>
-
-      
-    </div>
-      </article> 
-      <hr>
-    
-    
-    
-     <h2 class="archive-title">June 6, 2017</h2>
-
-    
-    <article class="article">
-      <a href="/tidytext-analysis-of-podcast-transcripts/" class="archive-item-link">Tidytext analysis of podcast transcripts</a>
-      
-       
-     
-     <div class="article-content">
-        
-     <p>I listen to podcasts for several hours each day. When I wake up, I launch <a href="http://overcast.fm">Overcast</a> and listen to a podcast while I have coffee. They&rsquo;re playing my drive to work, sometimes while I work,<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> and when I&rsquo;m running my shutdown routine at night to get ready for the next day.</p>
-
-<p>I love my podcasts.</p>
-
-<p>Earlier this year, <a href="http://david-smith.org/">_DavidSmith</a> released a side project, <a href="http://podsearch.david-smith.org">Podcast Search</a>. His description of this project:</p>
-
-<blockquote>
-<p>&ldquo;I take a few podcasts and run them through automated speech-to-text, which is useless for reading, but works out to be just fine for keyword searching.&rdquo;</p>
-</blockquote>
-
-<p>It&rsquo;s a really cool site - particularity since it produces searchable quasi-transcripts for a few of my favorite podcasts:</p>
-
-<ul>
-<li><a href="http://atp.fm">Accidental Tech Podcast</a></li>
-<li><a href="http://relay.fm/cortex">Cortex</a></li>
-<li><a href="http://5by5.tv/hypercritical">Hypercritical</a></li>
-<li><a href="http://daringfireball.net/thetalkshow">The Talk Show</a></li>
-<li>and more!</li>
-</ul>
-
-<p>They aren&rsquo;t perfect, but it&rsquo;s a pretty cool tool, and it got me thinking: wouldn&rsquo;t it be cool to take that text and run it through some <a href="http://tidytextmining.com"><code>tidytext</code></a> functions?</p>
-
-<p>So I did.</p>
-
-<p>I started by scraping the raw HTML for each episode of ATP, Cortex, Hypercritical, and The Talk Show. I then did a little data cleaning to get the text from Podcast Search into <a href="http://r4ds.had.co.nz/tidy-data.html">a tidy format</a>. There are still a few episodes of ATP and Hypercritical processing through _DavidSmith&rsquo;s speech-to-text algorithm, but there&rsquo;s enough data from each podcast to do some cursory text analysis using <code>tidytext</code>.</p>
-
-<p>As of 6 June 2017, I have about 1.1 million lines of text from these four podcasts to analyze. Once I loaded the data, it was pretty easy to parse out the words spoken in each podcast using the <code>unnest_tokens()</code> function from <code>tidytext</code>.</p>
-
-<pre><code class="language-r"># load libraries
-library(tidyverse)
-library(tidytext)
-
-# load transcript data
-atp &lt;- read_rds(&quot;data/atp.rda&quot;)
-cortex &lt;- read_rds(&quot;data/cortex.rda&quot;)
-hypercritical &lt;- read_rds(&quot;data/hypercritical.rda&quot;)
-the_talk_show &lt;- read_rds(&quot;data/tts.rda&quot;)
-
-# join podcast data together
-podcasts &lt;- bind_rows(atp, cortex, hypercritical, the_talk_show)
-
-# get count of words by podcast
-podcast_words &lt;- podcasts %&gt;% 
-  unnest_tokens(word, line) %&gt;%
-  anti_join(stop_words) %&gt;%
-  count(podcast, word) %&gt;%
-  ungroup()
-</code></pre>
-
-<p>Next, I wanted to use <code>tf-idf</code> to determine which words were most important to each podcast. Not familiar with this approach? Here&rsquo;s <a href="http://tidytextmining.com/tfidf.html#term-frequency-in-jane-austens-novels">a description from the authors of the <code>tidytext</code> package</a>:</p>
-
-<blockquote>
-<p>The idea of tf-idf is to find the important words for the content of each document by decreasing the weight for commonly used words and increasing the weight for words that are not used very much in a collection or corpus of documents&hellip;</p>
-
-<p>Calculating tf-idf attempts to find the words that are important (i.e., common) in a text, but not too common.</p>
-</blockquote>
-
-<p>In other words, if one of these podcasts uses an uncommon word more than others, this approach will help identify it. Here is the code I used to do this:</p>
-
-<pre><code class="language-r"># count total words per podcast
-total_words &lt;- podcast_words %&gt;%
-  group_by(podcast) %&gt;%
-  summarise(total = sum(n))
-
-# join individual word count and total word count
-# get tf_idf by podcast
-podcast_words &lt;- left_join(podcast_words, total_words) %&gt;% 
-  bind_tf_idf(word, podcast, n)
-  
-# plot top 10 tf_idf words by podcast
-podcast_words %&gt;%  
-  group_by(podcast) %&gt;% 
-  top_n(10) %&gt;% 
-  ungroup() %&gt;% 
-  ggplot(aes(reorder(word, tf_idf), tf_idf, fill = podcast)) +
-  geom_col(show.legend=FALSE) +
-  facet_wrap(~podcast, scales = &quot;free&quot;) +
-  coord_flip() +
-  labs(x = &quot;tf-idf&quot;,
-       title = &quot;Most Important Words by Podcast&quot;,
-       subtitle = &quot;Measured by tf-idf&quot;) +
-  scale_fill_manual(values = c(&quot;blue4&quot;, &quot;grey18&quot;,
-                               &quot;palegreen4&quot;, &quot;lightsteelblue4&quot;))+
-  theme(legend.position = &quot;none&quot;,
-        axis.title.y = element_blank())
-</code></pre>
-
-<p><img src="https://raw.githubusercontent.com/alspur/tidy_pod/master/figures/podcasts.png" alt="podcast plot" /></p>
-
-<p>This is a pretty interesting plot, but there&rsquo;s definitely some noise here. It&rsquo;s clear that there are some words that slipped through the <code>stop_words</code> filter (like &ldquo;dont&rdquo;) and some words that got mixed up during the speech-to-text process like (&ldquo;fd&rdquo;).</p>
-
-<p>There&rsquo;s also a lot of noise coming from each podcast&rsquo;s ad reads. I&rsquo;m sure this makes the folks at Casper, Lynda, Betterment, etc. happy, but I&rsquo;d like to know a little more about the actual content of these podcasts. Let&rsquo;s filter those words and plot again using this code:</p>
-
-<pre><code class="language-R">podcast_plot_clean &lt;- podcast_words %&gt;% 
-  arrange(desc(tf_idf)) %&gt;% 
-  filter(word != &quot;mattress&quot;) %&gt;%
-  filter(word != &quot;casper&quot;) %&gt;%
-  filter(word != &quot;betterment&quot;) %&gt;%
-  filter(word != &quot;lynda&quot;) %&gt;%
-  filter(word != &quot;5x5&quot;) %&gt;%
-  filter(word != &quot;rackspace&quot;) %&gt;%
-  filter(word != &quot;mailchimp.com&quot;) %&gt;%
-  filter(word != &quot;dont&quot;) %&gt;%
-  filter(word != &quot;tts&quot;) %&gt;%
-  filter(word != &quot;afm&quot;) %&gt;%
-  filter(word != &quot;fd&quot;) %&gt;%
-  filter(word != &quot;wealthfront&quot;) %&gt;%
-  filter(word != &quot;apron&quot;) %&gt;%
-  filter(word != &quot;cgpgrey&quot;) %&gt;%
-  mutate(word = factor(word, levels = rev(unique(word))))
-
-podcast_plot_clean %&gt;%  
-  group_by(podcast) %&gt;% 
-  top_n(10) %&gt;% 
-  ungroup() %&gt;% 
-  ggplot(aes(word, tf_idf, fill = podcast)) +
-  geom_col(show.legend=FALSE) +
-  facet_wrap(~podcast, scales = &quot;free&quot;) +
-  coord_flip() +
-  labs(x = &quot;tf-idf&quot;,
-       title = &quot;Most Important Words by Podcast&quot;,
-       subtitle = &quot;Measured by tf-idf&quot;) +
-  scale_fill_manual(values = c(&quot;blue4&quot;, &quot;grey18&quot;,
-                               &quot;palegreen4&quot;, &quot;lightsteelblue4&quot;))+
-  theme(legend.position = &quot;none&quot;,
-        axis.title.y = element_blank())
-</code></pre>
-
-<p><img src="https://raw.githubusercontent.com/alspur/tidy_pod/master/figures/podcasts_clean.png" alt="clean podcast plot" /></p>
-
-<p>This plot provides a much better understanding of what makes each of these podcasts unique:</p>
-
-<ul>
-<li>ATP is clearly a very technical show. From API&rsquo;s to PHP, <a href="http://twitter.com/caseyliss">Casey</a>, <a href="http://twitter.com/marcoarment">Marco</a>, and <a href="http://twitter.com/siracusa">John</a> spend a lot of time in the weeds of technical issues. If it were one word, &ldquo;file system&rdquo; (🛎) would have been on this plot.</li>
-<li>Cortex, a show about the working habits of <a href="http://twitter.com/imyke">Myke Hurley</a> and <a href="http://twitter.com/cgpgrey">CGP Grey</a>, is well-represented on this plot. Productivity topics come through clearly (coworking, <a href="http://trello.com">Trello</a>, <a href="http://todoist.com">Todoist</a>, <a href="https://www.relay.fm/cortex/23">Amsterdam workcations</a>), as well as their involvement in the YouTube community (Pewdiepie, vlog(s), vidcon, patreon). Grey&rsquo;s frequent &ldquo;mhm&rdquo;-ing also came through clearly via speech-to-text.</li>
-<li>Hypercritical&rsquo;s most important words are the most complex, a reflection of the preparation and intentionality John Siracusa brought to this show. &ldquo;Rumination&rdquo; is the perfect word to emerge as the most important for Hypercritical.<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup></li>
-<li>The Talk Show&rsquo;s words are too perfect. John Gruber&rsquo;s son Jonas takes the top spot, followed by ⚾️ (his beloved Yankees take the 10 spot). Two of the words (Vesper and bourbon) can be represented by cocktail 🍸🥃 emoji, which I&rsquo;m sure would make him proud. I&rsquo;m glad &ldquo;dingus&rdquo; and Han Solo made the list too. &ldquo;Iowa&rdquo;  and &ldquo;bomber&rdquo; made me scratch my head, but once I looked at the transcripts, it was obvious this is how the speech-to-text interpreted how Gruber pronounces &ldquo;iOS&rdquo; and (Steve) &ldquo;Ballmer&rdquo;.</li>
-</ul>
-
-<p>This was a pretty fun side project and there&rsquo;s still a ton of data to analyze. I&rsquo;ll likely write some additional posts on this front, but until then, <a href="https://github.com/alspur/tidy_pod">follow this repo</a> to see what I&rsquo;m working on.</p>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:1">Never while I code. I can&rsquo;t code and listen to vocal music.
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">28 of Hypercritical&rsquo;s 100 episodes are still processing through the speech-to-text algorithm, so they were unavailable for this analysis.
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-</ol>
-</div>
-
-      
-    </div>
-      </article> 
-      <hr>
-    
     
     
     
@@ -431,7 +341,7 @@ podcast_plot_clean %&gt;%
             <a href = "http://www.github.com/alspur"><font color="3c3e40"><i class="fa fa-github-alt"></i></a></font>
           </li>
           <li>
-            <a href = "http://www.linkedin.com/alspur"><font color="3c3e40"><i class="fa fa-linkedin"></i></a></font>
+            <a href = "http://www.linkedin.com/in/alspur"><font color="3c3e40"><i class="fa fa-linkedin"></i></a></font>
           </li>
           <li>
             <a href = "mailto:alex.spurrier@gmail.com"><font color="3c3e40"><i class="fa fa-envelope-o"></i></a></font>
@@ -459,8 +369,6 @@ podcast_plot_clean %&gt;%
 <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
 <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
 
-
-    
 
     
 <script>

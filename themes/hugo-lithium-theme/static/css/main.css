@@ -41,6 +41,15 @@ blockquote > p{
   padding: 0 .5em 0 1em;
 }
 
+table {
+  border-spacing: 10px;
+}
+
+table th {
+  background-color: #fff;
+  padding: 2px;
+}
+
 .wrapper {
   overflow: hidden;
   position: relative;
