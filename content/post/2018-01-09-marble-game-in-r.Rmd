@@ -4,10 +4,13 @@ date: '2018-01-09'
 slug: marble-game-in-r
 ---
 
-The college football playoff selection process is broken. The current [College Football Playoff (CFP)](https://en.wikipedia.org/wiki/College_Football_Playoff) was created to address the shortcomings of the [Bowl Championship Series (BCS)](https://en.wikipedia.org/wiki/Bowl_Championship_Series). Under the BCS system, a combination of polls and computer rankings were used to select two teams to play for the national championship. The [controversial nature of the BCS system is well-documented](https://en.wikipedia.org/wiki/Bowl_Championship_Series_controversies), but its greatest flaw was allowing a season to end with an undefeated team that did not have a chance to play for a championship.  
+The college football playoff selection process is broken. 
 
+The current [College Football Playoff (CFP)](https://en.wikipedia.org/wiki/College_Football_Playoff) was created to address the shortcomings of the [Bowl Championship Series (BCS)](https://en.wikipedia.org/wiki/Bowl_Championship_Series). Under the BCS system, a combination of polls and computer rankings were used to select two teams to play for the national championship. It seemed like a good idea, but [controversial the results of the BCS system are well-documented](https://en.wikipedia.org/wiki/Bowl_Championship_Series_controversies). One of the most obvious flaws: several teams finished with an undefeated season and did not have a chance to play for a championship.  
 
-The CFP was created to address the major problems of the BCS. Instead of using polls and computer takings to determine two teams to play for a national championship, the CFP relies on a selection committee to create a four-team playoff each year to determine the national champion. The selection committee's ability to apply more subjective criteria was intended to prevent BCS-style controversy, but the past two seasons (2016-2017 and 2017-2018) led to [similar controversy surrounding the selection of teams](https://en.wikipedia.org/wiki/College_Football_Playoff#Criticism). In a throwback to the BCS days, the 2017-2018 college football season ended with an undefeated team (Central Florida) that was not allowed to compete in the CFP. 
+In the hope of mitigating BCS-like contoversy, the CFP relies on a selection committee to create a four-team playoff each year to determine the national champion. The selection committee's ability to apply more subjective criteria was intended to prevent BCS-style controversy, but the past two seasons (2016-2017 and 2017-2018) led to a decent amount of [controversy surrounding the selection of playoff  teams](https://en.wikipedia.org/wiki/College_Football_Playoff#Criticism). In a throwback to the BCS days, the 2017-2018 college football season ended with an undefeated team (Central Florida) that was not allowed to compete in the CFP. 
+
+## Something needs to change
 
 In response to the flaws of the CFP system, [David Burge](https://www.twitter.com/iowahawkblog) proposed an easy-to-comprehend alternative approach to determine which NCAA football teams would be invited to the four-team playoff called the "Marble Game." The motivation behind the Marble Game is clear:
 
@@ -25,7 +28,7 @@ The rules of the Marble Game are simple:
 
 Using these rules, I created an R package, [`marblr`](https://www.github.com/alspur/marblr), to simulate the results of the Marble Game. The `marblr` package uses game data scraped from [Massey Ratings](https://www.masseyratings.com/data.php) to simulate the Marble Game using Burge's rules. Additionally, the `marblr` package allows for simulations that grant extra weight to teams from the [Power Five conferences (ACC, Big 12, Big Ten, Pac-12, SEC, plus Notre Dame)](https://en.wikipedia.org/wiki/Power_Five_conferences). As a default, teams from the Power Five start with 120 marbles, while all other teams start with 100. 
 
-## The 2017-2018 Marble Game
+## Simulating the 2017-2018 Marble Game
 
 ```{r marble-plot, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -73,24 +76,28 @@ knitr::kable(wk15_rank, align = c("c", "l", "r"),
 
 ```
 
-According to the Marble Game, Ohio State and Central Florida (the lone undefeated team) would have received CFP invites over Georgia and Alabama - teams that both won their first-round CFP games and made the national championship game in 2017-2018. Knowing what we know now, it would be silly to have excluded Alabama and Georgia from the CFP. 
+According to the Marble Game, Ohio State and Central Florida (the lone undefeated team) would have received CFP invites over Georgia and Alabama - teams that both won their first-round CFP games and made the national championship game in 2017-2018. At the same time, both Ohio State and Central Florida won their bowl games. It's hard to make a definitive case for the groups of four produced by the CFP or the Marble Game.
 
-Ideally, the Marble Game would be used to determine teams for an 8-team college football playoff. Under this system, each Power Five conference has a strong chance for their champion to make the playoff. Conferences with more strength at the top (like the SEC and Big Ten in 2017-2018) would be able to send multiple teams to the playoff based on their marble count. Such a playoff would have created the following first-round games:
+Ideally, the Marble Game would be used to determine an 8-team playoff. Under this system, each Power Five conference has a strong chance for their champion to make the playoff and undefeated teams from non-Power Five conferences would have a chance too. Conferences with multiple championship-caliber teams could send more than one team to the playoff. Such a playoff would have created the following first-round games in 2017-2018:
 
 - Clemson (1 seed, ACC) vs. Wisconsin (8 seed, Big Ten)
 - Ohio State (2 seed, Big Ten) vs. Alabama (7 seed, SEC)
 - Oklahoma (3 seed, Big 12) vs. USC (6 seed, Pac-12)
 - UCF (4 seed, AAC) vs. Georgia (5 seed, SEC)
 
-This bracket would resolve the controversy following this year's selections. Each major conference is represented, stronger conferences have multiple contenders, and a non-Power Five team was able to enter based on the marbles they accumulated through an undefeated regular season. 
+This bracket would resolve the controversy following this year's selections. Each major conference is represented, stronger conferences (Big Ten and SEC) have multiple contenders, and a non-Power Five team (Central Florida) was able to enter based on the marbles they accumulated through an undefeated regular season. 
+
+I'd like to see the first round of the tournament hosted at the higher seed's home field, with the semifinal and final rounds following the same process the CFP currently uses[^2].
 
 ## Moving forward
 
 College football deserves a better process for determining a national champion. There are simply too many seasons with more than four teams with a solid case to compete in a playoff. While the calendar and physical constraints prevent the development of a March Madness-style bracket in college football, expanding the CFP to an 8-team format could mitigate most of the controversy generated under past systems. 
 
-The CFP could continue their process of a selection committee, but the Marble Game is an attractive substitute. It places more weight and importance on winning late-season games - games that are either conference championships or rivalry games. It also would discourage programs from scheduling "cupcake" games; playing strong opponents would mean more opportunity to increase your marble count. Most importantly, the criteria for advancing to the playoff would be transparent, consistent, and fair to all teams. 
+The CFP could continue their process of a selection committee, but the Marble Game is an attractive substitute. It places more weight and importance on winning late-season games - games that are either conference championships or rivalry games. It also would discourage programs from scheduling "cupcake" games; scheduling strong opponents would translate to better opportunities to increase a team's marble count. Most importantly, the criteria for advancing to the playoff would be transparent, consistent, and fair to all teams. 
 
 It'll never happen, but it's a fun idea to consider.
 
 
 [^1]: The only games that count for the purposes of the Marble Game are games between FBS teams - Alabama's 56-0 drubbing of Mercer provides no useful information about Alabama's potential to contend for a national title.  
+
+[^2]: The [current semifinal games](https://en.wikipedia.org/wiki/College_Football_Playoff#Semifinals) rotate between the following bowl game pairings each year: Rose Bowl and Sugar Bowl; Orange Bowl and Cotton Bowl; and the Fiesta Bowl and Peach Bowl. The site of the championship game is determined through a bidding process.
