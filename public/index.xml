@@ -6,10 +6,19 @@
     <description>Recent content on @alspur</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Meta-cognition and data analysis</title>
+      <link>/metacognition-and-data-analysis/</link>
+      <pubDate>Thu, 11 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/metacognition-and-data-analysis/</guid>
+      <description>Learning how to perform various parts of a data analysis project - import, cleaning, visualizing, modeling - is hard. Learning how to bring those parts together in your day-to-day work is even more challenging. It&amp;rsquo;s hard because most analysis work is performed in isolation. We often see the results of great analysis work in blogs, articles, or presentations, sometimes even with source code, but seeing a final analysis product and it&amp;rsquo;s source code can obscure a lot of technique and thinking that went into the final product.</description>
+    </item>
     
     <item>
       <title>The Marble Game in R</title>
@@ -438,7 +447,7 @@ On top of this labyrinthine system, non-traditional public schools (including ma
       
       <guid>/projects/</guid>
       <description>Some of the stuff I&amp;rsquo;ve worked on includes:
- kysrc, an R package with Kentucky School Report Card data from 2012-2017. There&amp;rsquo;s too much data in to be hosted on CRAN, but you can install it with devtools by running this command: devtools::install_github(&amp;quot;alspur/kysrc&amp;quot;) Collaborative Analysis Development in Education Agencies, part of my capstone project for the Strategic Data Project Fellowsihp. More to come&amp;hellip;  </description>
+ kysrc, an R package with Kentucky School Report Card data from 2012-2017. There&amp;rsquo;s too much data in to be hosted on CRAN, but you can install it with devtools by running this command: devtools::install_github(&amp;quot;alspur/kysrc&amp;quot;) Collaborative Analysis Development in Education Agencies, part of my capstone project for the Strategic Data Project Fellowsihp. marblr, an R package that scrapes NCAA Division I Football game data from 1995 to present, then creates a simple and fair ranking system to determine which teams ought to have had a shot at a championship.</description>
     </item>
     
   </channel>
