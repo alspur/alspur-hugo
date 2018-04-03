@@ -21,10 +21,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "Archive"
     url = "/archive/"  
     weight = 3
-[[menu.main]]
-    name = "Resume"
-    url = "/files/spurrier_resume.pdf/"  
-    weight = 4
 
 [params]
     description = "A website built through Hugo and blogdown."
