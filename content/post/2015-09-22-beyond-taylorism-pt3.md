@@ -23,7 +23,7 @@ The real issue raised by this scene in *The Wire* and what we see in many school
 
 As much as this bureaucratic structure constrains educators, attempting to fundamentally transform this system is extraordinarily difficult, with educators often playing a prominent role in resisting such change. Neerav Kingsland thinks this is due to the "[ Allure of Safety][neerav]":
 
->"...educators seem unable to let go of the institutions and values that protect but ultimately limit them (thousand page collective bargaining agreements and district bureaucracies).
+>"...educators seem unable to let go of the institutions and values that protect but ultimately limit them (thousand page collective bargaining agreements and district bureaucracies)."
 
 Neerav also [looked at how we might move beyond this arrangement][unwind], but only one of the four strategies he presents would keep public schools under the control of local school boards. He calls this strategy the "Fight for Finland" – it would involve keeping the current governance structure and focusing efforts on improving the quality of teacher recruitment/development in exchange for loosening accountability. I agree with his assessment that this approach would take decades and and may not even be likely to succeed.
 
