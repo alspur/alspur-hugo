@@ -1,6 +1,7 @@
 ---
 title: Beyond Taylorism, Part III
 date: 2015-09-22T9:00:00-05:00
+slug: beyond-taylorism-part-iii 
 tags: 
   - taylorism
   - team of teams
