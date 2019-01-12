@@ -10,7 +10,7 @@ In November 2018, I successfully completed my first HTL during Veterans Day week
 
 The following is a description of my gear, both worn and carried, during the weekend I earned my bolts. 
 
-![htl-packing](files/2018-htl-gear.jpg)
+![htl-packing](/files/2018-htl-gear.jpg)
 
 ## The ruck
 
@@ -22,7 +22,7 @@ On the front MOLLE of my ruck, I’ve got a [Black Diamond Quickdraw](https://ww
 
 Also, a reflective band. It’s required. 
 
-And a morale patch. Because of Rule #1[^3]. 
+And a morale patch. Because of Rule #1.[^3] 
 
 ## Inside the ruck: laptop compartment
 
@@ -116,8 +116,8 @@ If I had to boil down my advice heading into your first cold-weather HTL, I’d 
 
 And as with any GORUCK event, embrace the suck.
 
-^[1]: If attempting an HTL is your first GORUCK experience, you’re crazy.
+[^1]: If attempting an HTL is your first GORUCK experience, you’re crazy.
 
-^[2]: As a pedant I must point out that technically, it’s a GR0.
+[^2]: As a pedant I must point out that technically, it’s a GR0.
 
-^[3]: Rule #1 = Always look cool.
+[^3]: Rule #1 = Always look cool.
