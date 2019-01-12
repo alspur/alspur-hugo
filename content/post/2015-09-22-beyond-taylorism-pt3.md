@@ -8,6 +8,7 @@ tags:
 ---
 
 If you're like me, you've read articles, essays, and books that attempt to explain the root cause of the problems facing  the teaching profession.  In [*The Allure of Order*][allureoforder], Jal Mehta only needs one paragraph to break it down:
+
 >"In the longer term, the success of the reformers in the Progressive Era resulted in a shift from one-room schoolhouses to urban school systems, in which schools were expected to follow the directives of a central manager in a district office. **This effectively institutionalized teaching, not as a profession under the control of its frontline practitioners, but as an activity performed within a bureaucratically controlled hierarchy.** (emphasis added) Teachers and schools, at the bottom of an implementation chain, were responsible primarily for implementing the ideas of central office managers.
 
 This resonates with me. To be sure, there are examples of leaders and teachers that find a way to thrive in the system as it exists today, but they are by far the exception and not the rule. Teachers – particularly in urban school systems – feel constrained by the system within which they operate.  
@@ -22,7 +23,7 @@ To some degree, teachers in many school systems share this mindset. After years 
 
 The real issue raised by this scene in *The Wire* and what we see in many school systems today is that the on-the-ground knowledge of those implementing policy don't have any effective avenues to influence a change in policy if something isn't working. Treating teachers as implementers without a voice in crafting or evolving policy limits the responsiveness and efficacy of education policy. 
 
-As much as this bureaucratic structure constrains educators, attempting to fundamentally transform this system is extraordinarily difficult, with educators often playing a prominent role in resisting such change. Neerav Kingsland thinks this is due to the "*[ Allure of Safety][neerav]*":
+As much as this bureaucratic structure constrains educators, attempting to fundamentally transform this system is extraordinarily difficult, with educators often playing a prominent role in resisting such change. Neerav Kingsland thinks this is due to the "[ Allure of Safety][neerav]":
 
 >"...educators seem unable to let go of the institutions and values that protect but ultimately limit them (thousand page collective bargaining agreements and district bureaucracies).
 
