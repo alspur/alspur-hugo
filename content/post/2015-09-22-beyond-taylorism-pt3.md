@@ -21,7 +21,7 @@ To some degree, teachers in many school systems share this mindset. After years 
 
 The real issue raised by this scene in *The Wire* and what we see in many school systems today is that the on-the-ground knowledge of those implementing policy don't have any effective avenues to influence a change in policy if something isn't working. Treating teachers as implementers without a voice in crafting or evolving policy limits the responsiveness and efficacy of education policy. 
 
-As much as this bureaucratic structure constrains educators, attempting to fundamentally transform this system is extraordinarily difficult, with educators often playing a prominent role in resisting such change. Neerav Kingsland thinks this is due to the "[ Allure of Safety][neerav]":
+As much as this bureaucratic structure constrains educators, attempting to fundamentally transform this system is extraordinarily difficult, with educators often playing a prominent role in resisting such change. Neerav Kingsland thinks this is due to the "[Allure of Safety][neerav]":
 
 >"...educators seem unable to let go of the institutions and values that protect but ultimately limit them (thousand page collective bargaining agreements and district bureaucracies)."
 
