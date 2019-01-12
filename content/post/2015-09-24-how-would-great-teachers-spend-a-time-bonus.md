@@ -15,11 +15,11 @@ This entire series of conversations with [Fishman Prize](fishman) winners is wor
 
 It perfectly captures my feelings after reading [*The Allure of Order*](allureoforder) and [*Team of Teams*](teamofteams): our highly bureaucratized school system is limiting the potential of our students *and* our educators. When we treat educators as implementers of top-down policies, we fail to benefit from their ground-level insights, making our education system too rigid to respond to the dynamic needs of students.  
 
-It's time to consider [a new approach](bt3).
+It's time to consider [a new approach](bt).
 
 [allureoforder]: http://www.amazon.com/The-Allure-Order-Expectations-Development/dp/0190231459
 
-[bt3]: http://alspur.com/beyond-taylorism-part-iii/
+[bt]: http://alspur.com/beyond-taylorism-part-iii/
 
 [fishman]: http://tntp.org/fishman-prize
 
