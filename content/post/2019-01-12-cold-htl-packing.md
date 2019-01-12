@@ -1,5 +1,5 @@
 ---
-title: HTL Packing List -- Cold Weather
+title: Cold Weather HTL Packing List
 date: 2019-01-12T10:08:03-05:00
 slug: cold-htl-packing
 ---
@@ -10,7 +10,7 @@ In November 2018, I successfully completed my first HTL during Veterans Day week
 
 The following is a description of my gear, both worn and carried, during the weekend I earned my bolts. 
 
-![htl-packing](/files/2018-htl-gear.jpg)
+![htl-packing](/files/2018-htl-gear.jpeg)
 
 ## The ruck
 
