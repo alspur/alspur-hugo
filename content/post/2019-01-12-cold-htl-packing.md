@@ -10,11 +10,11 @@ In November 2018, I successfully completed my first HTL during Veterans Day week
 
 The following is a description of my gear, both worn and carried, during the weekend I earned my bolts. 
 
-![htl-packing](/files/2018-htl-gear.jpeg)
+![htl-packing](static/files/2018-htl-gear.jpg)
 
 ## The ruck
 
-First things first: the ruck. I’ve used both a [standard 26L GR1 and a 21L GR1](https://www.goruck.com/rucksacks/shop-all-rucksacks/)[^2] for events. I’m 5’11" and the 26L is *just slightly* too long on my torso and I’ve found that the 21L is just more comfortable for me. 
+First things first: the ruck. I’ve used both a [standard 26L GR1 and a 21L GR1](https://www.goruck.com/rucksacks/shop-all-rucksacks/) for events.[^2] I’m 5’11" and the 26L is *just slightly* too long on my torso and I’ve found that the 21L is just more comfortable for me. 
 
 I’ve added a GORUCK [sternum strap](https://www.goruck.com/molle-sternum-strap/) and [hip belt](https://www.goruck.com/padded-hip-belt/), which for me are non-negotiable items for an HTL. Not only will it help re-distribute the weight in your ruck, the hip belt will prevent your ruck from sliding into the back of your head/neck during the inevitable bear crawl. 
 
