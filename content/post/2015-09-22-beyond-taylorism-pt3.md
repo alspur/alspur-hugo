@@ -13,11 +13,9 @@ If you're like me, you've read articles, essays, and books that attempt to expla
 
 This resonates with me. To be sure, there are examples of leaders and teachers that find a way to thrive in the system as it exists today, but they are by far the exception and not the rule. Teachers – particularly in urban school systems – feel constrained by the system within which they operate.  
 
-This actually reminds me of an moment from *The Wire* when McNulty reacts to a fellow officer issuing tickets for picayune offenses in order to comply with a directive from downtown to boost arrests: 
+This actually reminds me of an moment from *The Wire* when [McNulty reacts to a fellow officer issuing tickets for picayune offenses in order to comply with a directive from downtown to boost arrests](mcnulty): 
 
 >Baker, Let me let you in on a little secret, The patrolling officer on his beat is the one true dictatorship in America, we can lock a guy up on the humble, lock him up for real, or say fuck it and drink ourselves to death under the expressway and our side partners will cover us, No one - I mean no one - tells us how to waste our shift!"
->
->[James McNulty, *The Wire*][mcnulty]
 
 To some degree, teachers in many school systems share this mindset. After years and years of reform after reform, many educators (rightfully, I might add) react to new directives from district leadership by thinking "this too shall pass." The one time most teachers feel their agency is most powerful is when the classroom door closes and their implementation of district/state/federal policies is unsupervised.  This is not to say that most teachers shirk these responsibilities, merely that it is when they have the most power to control what they do and how they do it.
 
