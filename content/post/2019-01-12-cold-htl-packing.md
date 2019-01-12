@@ -10,7 +10,7 @@ In November 2018, I successfully completed my first HTL during Veterans Day week
 
 The following is a description of my gear, both worn and carried, during the weekend I earned my bolts. 
 
-![htl-packing](static/files/2018-htl-gear.jpg)
+![htl-packing](/files/2018-htl-gear.jpg)
 
 ## The ruck
 
