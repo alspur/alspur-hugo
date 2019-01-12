@@ -1,20 +1,20 @@
 ---
 title: HTL Packing List -- Cold Weather
-time: 2019-01-12T10:08:03-05:00
+date: 2019-01-12T10:08:03-05:00
 slug: cold-htl-packing
 ---
 
-One of the few things you can control when attempting a [GORUCK HTL](https://www.goruck.com/htl/) is your gear. Some of the items you’ll want are obvious and will be listed on the official event packing lists GORUCK provides, but if an HTL is one of your first GORUCK experiences^[1] and/or you haven’t done cold-weather events, this list might help you figure out what additional gear you'll need. 
+One of the few things you can control when attempting a [GORUCK HTL](https://www.goruck.com/htl/) is your gear. Some of the items you’ll want are obvious and will be listed on the official event packing lists GORUCK provides, but if an HTL is one of your first GORUCK experiences[^1] and/or you haven’t done cold-weather events, this list might help you figure out what additional gear you'll need. 
 
 In November 2018, I successfully completed my first HTL during Veterans Day weekend in Indianapolis. At the start of the event, the temperature was in the low 30s and dropped to 19F in the wee morning hours of the Heavy. For most of the weekend, the temperature mostly stayed in the 30s, with a few hours of low 40s. Precipitation-wise, there were a few mild flurries the first night, but nothing too serious. 
 
 The following is a description of my gear, both worn and carried, during the weekend I earned my bolts. 
 
-![htl-packing](files/2018-htl-gear.jpeg)
+![htl-packing](files/2018-htl-gear.jpg)
 
 ## The ruck
 
-First things first: the ruck. I’ve used both a [standard 26L GR1 and a 21L GR1](https://www.goruck.com/rucksacks/shop-all-rucksacks/)^[2] for events. I’m 5’11" and the 26L is *just slightly* too long on my torso and I’ve found that the 21L is just more comfortable for me. 
+First things first: the ruck. I’ve used both a [standard 26L GR1 and a 21L GR1](https://www.goruck.com/rucksacks/shop-all-rucksacks/)[^2] for events. I’m 5’11" and the 26L is *just slightly* too long on my torso and I’ve found that the 21L is just more comfortable for me. 
 
 I’ve added a GORUCK [sternum strap](https://www.goruck.com/molle-sternum-strap/) and [hip belt](https://www.goruck.com/padded-hip-belt/), which for me are non-negotiable items for an HTL. Not only will it help re-distribute the weight in your ruck, the hip belt will prevent your ruck from sliding into the back of your head/neck during the inevitable bear crawl. 
 
@@ -22,7 +22,7 @@ On the front MOLLE of my ruck, I’ve got a [Black Diamond Quickdraw](https://ww
 
 Also, a reflective band. It’s required. 
 
-And a morale patch. Because of Rule #1^[3]. 
+And a morale patch. Because of Rule #1[^3]. 
 
 ## Inside the ruck: laptop compartment
 
