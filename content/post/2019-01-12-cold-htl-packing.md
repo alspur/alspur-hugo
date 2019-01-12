@@ -1,5 +1,5 @@
 ---
-title: Cold Weather HTL Packing List
+title: Packing for a Cold Weather GORUCK HTL
 date: 2019-01-12T10:08:03-05:00
 slug: cold-htl-packing
 ---
