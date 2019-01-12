@@ -81,7 +81,7 @@ I also kept an emergency blanket in this pocket. Thankfully, we did not need it 
 
 ## What I wore
 
-It all starts with your feet. SmartWool socks are great for cold-weather events, and when paired with my Solomon 3D Pro shoes, ensure that my feet stayed warm enough without taking on too much blister-causing moisture. 
+It all starts with your feet. [SmartWool socks](https://www.amazon.com/Smartwool-Mens-Outdoor-Heavy-Socks/dp/B07CN9LJ7G) are great for cold-weather events, and when paired with my [Solomon Xa Pro 3D shoes](https://www.amazon.com/Salomon-Mens-Trail-Runner-Chive/dp/B01HD6SKOG/ref=sr_1_3?ie=UTF8&qid=1547307032&sr=8-3&keywords=salomon%2Bpro%2B3d&th=1), ensure that my feet stayed warm enough without taking on too much blister-causing moisture. 
 
 Moving up from my feet, I wore an Under Armour Heat Gear 2.0 base layer, which was just right for my HTL in terms of heat retention and sweat wicking. On top of that base layer, I had some Patagonia pants, an elastic belt, dry fit long sleeve shirt, Mechanix gloves, and my [GORUCK Tac Hat](https://www.goruck.com/tac-hat-mesh/). 
 
