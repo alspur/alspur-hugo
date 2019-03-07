@@ -34,8 +34,8 @@ Setting aside the merits of these policies, it's important to consider the impac
 
 The [*raison d'etre*](https://en.wiktionary.org/wiki/raison_d%27être) for these school closures is often only tangentially connected to improving outcomes for kids. When it's led by professionals earning more - sometimes significantly more - than the families they serve, quasi-strikes of teachers may actually lead to *reduced* support for their policy goals. 
 
-I'm a big fan of teachers - I was a public school teacher and my sister has made it her career. But I would urge Kentucky's teachers to consider the impact of school shutdowns on kids and families they serve before further utilizing that tactic. The vast majority of homes in the communities they serve may not have the means to arrange childcare on short notice and disrupting the learning process may be even more harmful for economically disadvantaged students. 
+I'm a big fan of teachers - I was a public school teacher and my sister has made it her career. But I would urge Kentucky's teachers to consider the impact of school shutdowns on the kids and families they serve before further utilizing that tactic. The vast majority of homes in the communities they serve earn less than the average teacher and may not have the means to arrange childcare on short notice. Additionally, disrupting the learning process may be even more harmful for economically disadvantaged students. 
 
-In the end, students and families bear the costs of "sickouts" in Kentucky and the benefits to them are not very clear. I'm not sure how many more school closures families will tolerate, but there is certainly a limit - I just hope that teachers don't push past it. 
+In the end, **students and families bear the costs of "sickouts" in Kentucky and the benefits to them are not very clear.** I'm not sure how many more school closures families will tolerate, but there is certainly a limit - I just hope that teachers don't push past it. 
 
 [^1]: All code and data used to answer this question are [available on my GitHub page.](https://github.com/alspur/ky-mhi-teacher-salary)
