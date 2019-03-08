@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on @alspur</title>
-    <link>/tags/r/</link>
+    <link>https://www.alspur.com/tags/r/</link>
     <description>Recent content in R on @alspur</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Aug 2016 06:20:00 -0500</lastBuildDate>
     
-	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.alspur.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to create a free distributed data collection &#34;app&#34; with R and Google Sheets</title>
-      <link>/how-to-create-a-free-distributed-data-collection-app-with-r-and-google-sheets/</link>
+      <link>https://www.alspur.com/how-to-create-a-free-distributed-data-collection-app-with-r-and-google-sheets/</link>
       <pubDate>Mon, 29 Aug 2016 06:20:00 -0500</pubDate>
       
-      <guid>/how-to-create-a-free-distributed-data-collection-app-with-r-and-google-sheets/</guid>
+      <guid>https://www.alspur.com/how-to-create-a-free-distributed-data-collection-app-with-r-and-google-sheets/</guid>
       <description>A really neat concept that reminds me of my time tracking method:
  Jenny Bryan, developer of the google sheets R package, gave a talk at Use2015 about the package.
 One of the things that got me most excited about the package was an example she gave in her talk of using the Google Sheets package for data collection at ultimate frisbee tournaments. One reason is that I used to play a little ultimate back in the day.</description>
@@ -24,10 +24,10 @@ One of the things that got me most excited about the package was an example she 
     
     <item>
       <title>Time Tracking</title>
-      <link>/time-tracking/</link>
+      <link>https://www.alspur.com/time-tracking/</link>
       <pubDate>Fri, 29 Jul 2016 20:49:00 -0500</pubDate>
       
-      <guid>/time-tracking/</guid>
+      <guid>https://www.alspur.com/time-tracking/</guid>
       <description>I tweeted this out earlier today:
 Insights from time tracking: I need to do more #rstats programming on Thursday/Friday afternoons. Also, mtgs suck. pic.twitter.com/14dFtGNubP
 &amp;mdash; Alex Spurrier (@alspur) July 29, 2016 

@@ -1,7 +1,6 @@
 ---
-title: PLL City Predictions - First Third Grades
+title: Grading my PLL proposal - first four cities
 date: 2019-03-08T12:52:26-05:00
-link: https://www.cities.premierlacrosseleague.com
 slug: picking-pll-cities-v2
 ---
 
