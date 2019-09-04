@@ -24,7 +24,7 @@ There are only 4 counties in Kentucky where the average teacher's salary is less
 
 ![ratio-map](/files/ratio_map.png)
 
-1 in 4 of Kentucky's certified teachers earns a salary similar to or less than the MHI of their employer's county, which means **75% of certified teachers in Kentucky earn at least 10% more than the median household in the community they serve.**
+1 in 4 of Kentucky's certified teachers work in a district where the average salary is similar to or less than the MHI of their employer's county, which means **75% of certified teachers in Kentucky work in a district where the average salary is at least 10% more than the median household in the community they serve.**
 
 Why does this matter? 
 
