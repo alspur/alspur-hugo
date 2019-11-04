@@ -62,6 +62,119 @@
 
     
     
+     <h2 class="archive-title">November 4, 2019</h2>
+
+    
+    <article class="article">
+      <a href="/make-a-simple-map/" class="archive-item-link">Making an editable map for PowerPoint with R</a>
+      
+       
+     
+     <div class="article-content">
+        
+     <p>Recently, I needed to make a map that would color-code states and overlay some points to represent data for specific metro areas. My initial reaction to graphic creation is to always start with R and use <code>ggplot2</code>, but the final product also needed to be editable as a PowerPoint graphic.</p>
+
+<p>This was the perfect opportunity to try a few R packages that were new to me: the <a href="https://github.com/UrbanInstitute/urbnmapr"><code>urbnmapr</code></a> package from the Urban Institute for map-making and the <a href="https://davidgohel.github.io/officer/"><code>officer</code></a> and <a href="https://rdrr.io/cran/rvg/"><code>rvg</code></a> packages to export data from R into Microsoft Office document formats (including <code>.pptx</code>).</p>
+
+<p>Using a <a href="https://medium.com/@urban_institute/how-to-create-state-and-county-maps-easily-in-r-577d29300bb2">great tutorial</a> on how to use <code>urbnmapr</code>, I was able to produce the map I wanted pretty quickly. All it took was a simple <code>left_join()</code> to merge my state data with the <code>urbnmapr</code> data, then all I had to do was use <code>geom_polygon</code> and <code>geom_point</code> to map my two layers of data.</p>
+
+<p>I recreated a version of the map I made using two tables of data:</p>
+
+<ul>
+<li>A list of states, coded as states I&rsquo;ve called home, visited, or never been</li>
+<li>A list of coordinates indicating where I&rsquo;ve done postsecondary work</li>
+</ul>
+
+<p>It took me about 15 minutes to pull this together - most of it was spent actually creating the data:</p>
+
+<p><img src="https://raw.githubusercontent.com/alspur/simple-map-for-ppt/master/place_ps_map.png" alt="" /></p>
+
+<p>Most of the time, I’m exporting the plot as a static <code>.png</code> file, but thanks to the <code>officer</code> and <code>rvg</code> packages, I was able to export my <code>ggplot</code> object to a slide in a <code>.pptx</code> deck:</p>
+
+<pre><code>library(officer)
+library(rvg)
+
+read_pptx() %&gt;%
+  add_slide(layout = &quot;Title and Content&quot;, master = &quot;Office Theme&quot;) %&gt;%
+# this is where you call your ggplot object (here it's `place_ps_map`)
+  ph_with_vg(code = print(place_ps_map), type = &quot;body&quot;) %&gt;% 
+# this is where you provide the filename/location for your new ppt slide
+  print(target = &quot;place_ps_map.pptx&quot;)
+</code></pre>
+
+<p>That&rsquo;s it! From that point, I was able to open the PowerPoint deck and play around with every part of my map. I &ldquo;ungrouped&rdquo; all of the elements, then re-grouped the legend and map elements as separate groups to make re-positioning really easy.</p>
+
+<p><img src="https://raw.githubusercontent.com/alspur/simple-map-for-ppt/master/ungroup.png" alt="" /></p>
+
+<p>If you want to check out the code and data I used, it&rsquo;s available on <a href="https://github.com/alspur/simple-map-for-ppt">Github</a>.</p>
+
+      
+    </div>
+      </article> 
+      <hr>
+    
+    
+    
+     <h2 class="archive-title">March 18, 2019</h2>
+
+    
+    <article class="article">
+      <a href="/selective-hs-diversity/" class="archive-item-link">Selective high schools and diversity</a>
+      
+      
+      
+      
+      
+      
+      
+      <a href = "https://www.nytimes.com/2019/03/18/nyregion/black-students-nyc-high-schools.html"><font color="3c3e40"><i class="fa fa-link" 
+      title="directlink"></i></a></font>
+      
+     
+      
+      
+     
+     <div class="article-content">
+        
+     <p>New York City’s selective high schools have a diversity problem:</p>
+
+<blockquote>
+<p>Though black and Hispanic students make up nearly 70 percent of New York City’s public school system as a whole, just over 10 percent of students admitted into the city’s eight specialized high schools were black or Hispanic, according to statistics released Monday by the city. That percentage is flat compared to last year.</p>
+</blockquote>
+
+<p>It’s also a problem in Louisville.</p>
+
+<p>DuPont Manual is <a href="https://www.niche.com/k12/search/best-public-high-schools/s/kentucky/">commonly</a> <a href="https://www.usnews.com/education/best-high-schools/kentucky">viewed</a> as the most desirable public high school Jefferson County. It’s a selective admissions school that accepts applications from students from all over the county and offers free transportation to those that are selected for admission.</p>
+
+<p>Yet in a district where 36% of students are African American, only 13% of Manual students are African American (the smallest percentage of any JCPS high school) and admission tends to favor students from the most affluent areas of Louisville.</p>
+
+<p>Using data from the <a href="https://www.jefferson.kyschools.us/node/1193">JCPS Data Book</a> and the <a href="https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml">US Census Bureau</a>, we can see how a student’s home zip code correlates to the chance they will attend duPont Manual. Across all of JCPS, about 3.5% of high school students are enrolled at Manual, but that rate varies significantly by students’ resident zip code.</p>
+
+<p>In Jefferson County&rsquo;s seven most affluent zip codes, JCPS students are anywhere from <strong>2 to 4.5 times more likely to enroll at Manual than the JCPS district average.</strong></p>
+
+<p><img src="/files/dupont_odds_plot.png" alt="zip-plot" /></p>
+
+<p>Those familiar with Louisville won’t be surprised with the income distribution across zip codes, shown in the map below.</p>
+
+<p><img src="/files/jcps_zip_mhi.png" alt="mhi-map" /></p>
+
+<p>But it’s revealing that the map above so closely mirrors the map below, which reflects the odds that a JCPS high school student in a given zip code is attending Manual. <strong>In every zip code west of duPont Manual&rsquo;s campus, students are enrolling at Manual at less than half the district rate.</strong> There are three zip codes in West Louisville with more than five thousand resident JCPS high school students, but only 46 students attend Manual - less than 1% of the resident students in these communities.</p>
+
+<p><img src="/files/dupont_odds_map.png" alt="manual-map" /></p>
+
+<p>Unlike NYC, we don’t have publicly available data to further illustrate how many students have applied to Manual, where they live in Jefferson County, how many were qualified but not admitted, etc. But the <a href="https://www.dupontmanual.com/magnetapp.html">opaque admissions process at Manual</a> does appear to favor families from communities with more financial resources.</p>
+
+<p>I don’t begrudge any family that currently sends or has sent students to Manual — it’s a great school and those parents have every right to seek out the best situation for their children. But a student’s educational opportunities shouldn’t be limited by the value of a home their parent(s) can afford. Louisville’s most selective public school, like NYC’s selective high schools, aren’t granting enough opportunities to the students who would stand to benefit the most from admission.</p>
+
+<p>It’s why Kentucky should keep pushing to expand school choice. Low-income and African American families deserve the same opportunity to choose a great school for their child as a family in Anchorage or Prospect.</p>
+
+      
+    </div>
+      </article> 
+      <hr>
+    
+    
+    
      <h2 class="archive-title">March 8, 2019</h2>
 
     
@@ -169,7 +282,7 @@
 
 <p><img src="/files/ratio_map.png" alt="ratio-map" /></p>
 
-<p>1 in 4 of Kentucky&rsquo;s certified teachers earns a salary similar to or less than the MHI of their employer&rsquo;s county, which means <strong>75% of certified teachers in Kentucky earn at least 10% more than the median household in the community they serve.</strong></p>
+<p>1 in 4 of Kentucky&rsquo;s certified teachers work in a district where the average salary is similar to or less than the MHI of their employer&rsquo;s county, which means <strong>75% of certified teachers in Kentucky work in a district where the average salary is at least 10% more than the median household in the community they serve.</strong></p>
 
 <p>Why does this matter?</p>
 
@@ -231,262 +344,6 @@
 <p>Some of the valedictorians - notably, the ones from selective &ldquo;exam schools&rdquo; - fared better than other public school graduates. That there could be such a wide variation in the quality of academic preparation among schools’ <em>highest-performing students</em> is extremely disappointing, but not surprising.</p>
 
 <p>Much work remains to be done to help students navigate the transition from high school to college, both financially and socially, but K-12 leaders and policymakers should at a bare minimum ensure that high school coursework can prepare students <em>academically</em> for their next step. That may mean entering the workforce or military, attending a community college, or enrolling in a highly selective university, but no student should have their potential limited by policymakers’ lowered expectations and/or unchallenging curricular options.</p>
-
-      
-    </div>
-      </article> 
-      <hr>
-    
-    
-    
-     <h2 class="archive-title">January 12, 2019</h2>
-
-    
-    <article class="article">
-      <a href="/cold-htl-packing/" class="archive-item-link">Packing for a Cold Weather GORUCK HTL</a>
-      
-       
-     
-     <div class="article-content">
-        
-     
-
-<p>One of the few things you can control when attempting a <a href="https://www.goruck.com/htl/">GORUCK HTL</a> is your gear. Some of the items you’ll want are obvious and will be listed on the official event packing lists GORUCK provides, but if an HTL is one of your first GORUCK experiences<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> and/or you haven’t done cold-weather events, this list might help you figure out what additional gear you&rsquo;ll need.</p>
-
-<p>In November 2018, I successfully completed my first HTL during Veterans Day weekend in Indianapolis. At the start of the event, the temperature was in the low 30s and dropped to 19F in the wee morning hours of the Heavy. For most of the weekend, the temperature mostly stayed in the 30s, with a few hours of low 40s. Precipitation-wise, there were a few mild flurries the first night, but nothing too serious.</p>
-
-<p>The following is a description of my gear, both worn and carried, during the weekend I earned my bolts.</p>
-
-<p><img src="/files/2018-htl-gear.jpg" alt="htl-packing" /></p>
-
-<h2 id="the-ruck">The ruck</h2>
-
-<p>First things first: the ruck. I’ve used both a <a href="https://www.goruck.com/rucksacks/shop-all-rucksacks/">standard 26L GR1 and a 21L GR1</a> for events.<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup> I’m 5’11&rdquo; and the 26L is <em>just slightly</em> too long on my torso and I’ve found that the 21L is just more comfortable for me.</p>
-
-<p>I’ve added a GORUCK <a href="https://www.goruck.com/molle-sternum-strap/">sternum strap</a> and <a href="https://www.goruck.com/padded-hip-belt/">hip belt</a>, which for me are non-negotiable items for an HTL. Not only will it help re-distribute the weight in your ruck, the hip belt will prevent your ruck from sliding into the back of your head/neck during the inevitable bear crawl.</p>
-
-<p>On the front MOLLE of my ruck, I’ve got a <a href="https://www.amazon.com/gp/product/B004M3DXX2/ref=ppx_yo_dt_b_asin_title_o08__o00_s00?ie=UTF8&amp;psc=1">Black Diamond Quickdraw</a> that acts as another handle. It comes in handy while doing presses and overhead holds. This addition isn’t needed if you have a Rucker 2.0 with the second handle already sewn into the bottom of the ruck.</p>
-
-<p>Also, a reflective band. It’s required.</p>
-
-<p>And a morale patch. Because of Rule #1.<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup></p>
-
-<h2 id="inside-the-ruck-laptop-compartment">Inside the ruck: laptop compartment</h2>
-
-<p>I have a 28 pound steel plate from the now-defunct SH Plates for the Heavy/Tough and a 20 pound plate from GORUCK for the Light. If you’re using a GR1 or a Rucker, make sure you purchase the correct plate to fit your ruck.</p>
-
-<h2 id="inside-the-ruck-slant-pocket">Inside the ruck: slant pocket</h2>
-
-<p>This is where I like to keep quick-access items. Per the recommendation of <a href="https://overld.me/2014/04/10/packing-for-a-goruck-heavy/">Mark Webb’s Heavy packing list</a>, a couple of <a href="https://www.amazon.com/Black-Diamond-10mm-Dynex-Runner/dp/B019NULFMY/ref=sr_1_4?ie=UTF8&amp;qid=1547303760&amp;sr=8-4&amp;keywords=120cm%2Bclimbing%2Brunner&amp;th=1&amp;psc=1">climbing runners</a> are really helpful to store here. They come in handy when carrying awkwardly-shaped items like logs or rocks or whatever else the Cadre come up with. I keep two in the slant pocket.</p>
-
-<p>I also carry two <a href="https://www.amazon.com/gp/product/B0011861UI/ref=ppx_yo_dt_b_asin_title_o02__o00_s00?ie=UTF8&amp;psc=1">lifting straps</a>. If your Cadre like to use Jerry Cans, this will help give you significantly more grip endurance.</p>
-
-<h2 id="inside-the-ruck-hydration">Inside the ruck: hydration</h2>
-
-<p>I use a <a href="https://www.amazon.com/gp/product/B008S9DYLC/ref=ppx_yo_dt_b_asin_title_o01__o00_s00?ie=UTF8&amp;psc=1">low-profile 3L Source bladder</a> for all of my GORUCK events, which is clipped to the internal webbing of my GR1 and secured to one of the shoulder straps with an <a href="https://www.goruck.com/molle-bladder-hose-retainer/">ITW web dominator</a>.</p>
-
-<p>During the HTL, I learned something about cold-weather events: your water hose can and probably will freeze. Around 1:00am during the Heavy, my hose froze and I was only able to thaw it by disconnecting it and wrapping it around my torso under my shirt.</p>
-
-<p>Some will advocate for forcing air into your hose after each drink to combat freezing, but as I discoverd, it’s not going to work all of the time - particularly if it drops below 20 degrees.</p>
-
-<p>You may want to consider just carrying a Nalgene as a backup hydration source and/or insulating your hose during a cold-weather HTL.</p>
-
-<h2 id="inside-the-ruck-dry-bags">Inside the ruck: dry bags</h2>
-
-<p>I like to use two dry bags inside the main compartment of my ruck. The <a href="https://www.amazon.com/gp/product/B001Q3KKGY/ref=ppx_yo_dt_b_asin_title_o01__o00_s01?ie=UTF8&amp;psc=1">Sea to Summit 13L Dry Sack</a> is big enough to fit most of the stuff I wanted to carry and will keep these items dry. Additionally, if/when the Cadre make you do a gear dump, it helps speed up the re-packing process.</p>
-
-<p>The dry bags also keep you organized. Loose items can easily lead to a gypsy camp - a clear violation of Rule #1.</p>
-
-<p>In dry bag #1, I stored extra clothing items. Extra wool socks, an extra-warm pair of gloves each came in very handy during this event. It’s also where I initially stored my half-zip thermal layer, a <a href="https://buffusa.com/buff-products/neckwarmers/heavyweight-merino-wool-neckwarmer/black/110963">merino wool neck gaiter</a>, a merino wool beanie, and my windbreaker. However, it was so damn cold and windy at the start point, all of this gear made it on my person before the event started.</p>
-
-<p>In retrospect, I would have liked to add a light, packable down jacket to this dry bag. Lesson learned.</p>
-
-<p>All of my food, medical items, extra carabiner, extra climbing runners, and phone went into dry bag #2. I kept my phone in a small Pelican case with my wallet. For future HTLs, I’ll probably leave that stuff in my duffel bag with my between-event gear.</p>
-
-<p>My food was mostly a little leftover Halloween candy, a few protein bars, and some packets of almond butter. It was on the light side of what I needed, but I got through the event without crashing. Might add some beef jerky to the mix next time.</p>
-
-<p>I also keep a bottle of electrolytes to add to my water during events. I’ve used <a href="https://www.amazon.com/gp/product/B00EISFBYA/ref=oh_aui_search_asin_title?ie=UTF8&amp;th=1">LyteShow</a> for the past few events and haven’t had cramping issues.</p>
-
-<p>My medical items are pretty standard: a few band-aids, Advil, some KT tape, alcohol wipes, and a needle for draining blisters. I also pack a small container of Trail Toes. Whenever I had a chance to change my socks, I made sure to re-lube my feet, which helped me to finish the HTL with no blisters.</p>
-
-<p>I also pack an extra set of AAA batteries for my headlamp and a shoelace in my med kit. I’ve never had an issue with the laces on my shoes or batteries during an event, but I feel it’s wise to anticipate where Mr. Murphy might strike.</p>
-
-<h2 id="inside-the-ruck-top-zipper-pocket">Inside the ruck: top zipper pocket</h2>
-
-<p>This is where I keep a snack-sized Ziploc bag with my drivers license and quitter’s cash. The Cadre will want to see these during the admin phase, so I like to keep it very handy.</p>
-
-<p>I’ll also stash my headlamp and some chapstick in this pocket.</p>
-
-<h2 id="inside-the-ruck-mesh-pocket">Inside the ruck: mesh pocket</h2>
-
-<p>I have a spare 3L Source bladder, hose, and mouthpiece in this pocket. Hydration is key during an HTL and two is one and one is none.</p>
-
-<p>Having a second hydration option saved me during the Heavy. My original water hose broke when my ruck was tossed onto some pavement only a few hours into the event. I was able to switch it out for my backup and was fine.</p>
-
-<p>I also kept an emergency blanket in this pocket. Thankfully, we did not need it during the event.</p>
-
-<h2 id="what-i-wore">What I wore</h2>
-
-<p>It all starts with your feet. <a href="https://www.amazon.com/Smartwool-Mens-Outdoor-Heavy-Socks/dp/B07CN9LJ7G">SmartWool socks</a> are great for cold-weather events, and when paired with my <a href="https://www.amazon.com/Salomon-Mens-Trail-Runner-Chive/dp/B01HD6SKOG/ref=sr_1_3?ie=UTF8&amp;qid=1547307032&amp;sr=8-3&amp;keywords=salomon%2Bpro%2B3d&amp;th=1">Solomon Xa Pro 3D shoes</a>, ensure that my feet stayed warm enough without taking on too much blister-causing moisture.</p>
-
-<p>Moving up from my feet, I wore an Under Armour Heat Gear 2.0 base layer, which was just right for my HTL in terms of heat retention and sweat wicking. On top of that base layer, I had some Patagonia pants, an elastic belt, dry fit long sleeve shirt, Mechanix gloves, and my <a href="https://www.goruck.com/tac-hat-mesh/">GORUCK Tac Hat</a>.</p>
-
-<p>As I noted earlier, this was not warm enough and I ended up wearing the extra layers I had intended to keep in my dry bag for most of the event. During the course of the event, some of these layers found their way back into my ruck, but I’m glad that I had them with me.</p>
-
-<p>An underrated piece of clothing was my <a href="https://buffusa.com/buff-products/neckwarmers/heavyweight-merino-wool-neckwarmer/black/110963">neck gaiter</a>. I can’t begin to describe the difference this makes in staying warm and protected from the wind during a cold weather GORUCK event. If you learn one thing from my packing list, it should be to get a wool gaiter for any cold weather GORUCK event.</p>
-
-<h2 id="between-events">Between events</h2>
-
-<p>You want to have a clear plan of priorities between events. My list went something like this:</p>
-
-<ol>
-<li>Get some calories</li>
-<li>Stretch and foam roll</li>
-<li>Foot care</li>
-<li>Prep gear for next event</li>
-<li>Shower/brush teeth</li>
-<li>Nap</li>
-</ol>
-
-<p>It’s critical to get the first 5 in <em>before</em> you get any sleep. The last thing you want to do is scramble for food/gear with 30 minutes to get to the start point for the Tough/Light.</p>
-
-<h2 id="your-gear-will-only-get-you-so-far">Your gear will only get you so far</h2>
-
-<p>The odds that a gear malfunction or oversight will make or break your HTL experience are extremely small. You will still have to cover a few dozen miles, grind out a lot of PT, and carry some heavy shit. Smart gear choices can make that stuff a little better, but it’s still going to suck, but that’s what an HTL is about. Some shoe/sock combinations may be marginally more comfortable/durable, but it won’t make up for a lack of logging some serious miles under weight pre-HTL.</p>
-
-<p>If I had to boil down my advice heading into your first cold-weather HTL, I’d recommend the following:</p>
-
-<ul>
-<li>Pack high-quality gear, but not too much.</li>
-<li>Wear a merino wool neck gaiter.</li>
-<li>Have a plan, place, and gear/food for your between-event time.</li>
-<li>Ruck as many miles as you can pre-event with a heavy ruck.</li>
-<li>Get your mind ready with some overnight rucks and workouts on an empty stomach.</li>
-</ul>
-
-<p>And as with any GORUCK event, embrace the suck.</p>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:1">If attempting an HTL is your first GORUCK experience, you’re crazy.
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">As a pedant I must point out that technically, it’s a GR0.
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-<li id="fn:3">Rule #1 = Always look cool.
- <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
-</ol>
-</div>
-
-      
-    </div>
-      </article> 
-      <hr>
-    
-    
-    
-     <h2 class="archive-title">January 11, 2019</h2>
-
-    
-    <article class="article">
-      <a href="/picking-pll-cities/" class="archive-item-link">Picking the PLL Cities</a>
-      
-      
-      
-      
-      
-      
-      
-      <a href = "https://www.cities.premierlacrosseleague.com"><font color="3c3e40"><i class="fa fa-link" 
-      title="directlink"></i></a></font>
-      
-     
-      
-      
-     
-     <div class="article-content">
-        
-     
-
-<p>The <a href="https://www.premierlacrosseleague.com">Premiere Lacrosse League (PLL)</a> is attempting a new model for a professional team sport: a tour-based schedule with the entire six-team league playing in a different city each weekend. Paired with their <a href="https://www.premierlacrosseleague.com/launch-announcement">NBC partnership</a>, more people will get to see high-quality lacrosse than a city-based league like the MLL could attain.</p>
-
-<p>This week, the PLL announced a list of 30 cities that are in the running to be one of the 12 final sites for PLL games this summer. The map includes cities from coast-to-coast, as well as a pair of Canadian cities. Having grown up playing lacrosse in Minnesota and doing some coaching in Kentucky, I’m excited to see a lot of non-traditional lacrosse areas on the map. It seems clear that the PLL is serious about expanding interest in the game beyond the <a href="https://en.wikipedia.org/wiki/Northeast_Corridor">Acela corridor</a>.</p>
-
-<p>The big question - how should the PLL decide which cities to host game weekends during their inaugural season?</p>
-
-<p>My proposal would be to divide the map into four regions, then to select three cities from each region. The four regions would be: Northeast, South, Midwest, and West. It would allow for representation in traditional hotbeds, but the bulk of the cities (75%) would be in areas where youth lacrosse has the highest rates of growth.</p>
-
-<p>Here’s my breakdown of each region:</p>
-
-<h2 id="northeast">Northeast</h2>
-
-<p>Cities: Albany, Baltimore, Boston, Buffalo, Hartford, New York, Philadelphia, Providence, Toronto, Washington DC</p>
-
-<p>This region is rich with lacrosse tradition, which makes it difficult to cut any of these cities. I think right off the bat, New York has to be on the final list. Ignoring the media opportunities/exposure of the Big Apple, it would also give the league a chance to show the great work and impact of organizations working to expand access to the sport, such as <a href="https://www.harlemlacrosse.org">Harlem Lacrosse</a>.</p>
-
-<p>With NYC off the table, that leaves us with two cities to select from three pretty distinct sub-regions:</p>
-
-<ul>
-<li>Mid-Atlantic: Baltimore, Philadelphia, and Washington DC</li>
-<li>New England: Boston, Hartford, Providence</li>
-<li>Upstate: Albany, Buffalo, Toronto</li>
-</ul>
-
-<p>With all due respect to the Upstate cities, I think the remaining two cities should come from the other sub-regions. Baltimore is an easy pick here - it’s where PLL partner STX is headquartered and is home to some of the best lacrosse programs at every age level.</p>
-
-<p>Out of the New England sub-region, I’d go with a smaller city: Hartford. As a <a href="https://www.trincoll.edu">Trinity alum</a> and former Hartford resident, I’m a little biased. <em>HOWEVER</em> - the UConn football stadium will be the site of a <a href="http://dailycampus.com/stories/2017/4/19/hartford-to-host-2019-march-madness-rentchler-field-gets-2021-mens-lacrosse-title-game">men’s lacrosse NCAA quarterfinal game this spring as well as the 2021 and 2022 Men’s NCAA lacrosse championship games</a>. Seems like a natural fit for the PLL!</p>
-
-<p><strong>Final cities: Hartford, New York, Baltimore</strong></p>
-
-<h2 id="south-region">South Region</h2>
-
-<p>Cities: Atlanta, Charlotte, Dallas, Houston, Miami, Orlando, Raleigh, Richmond</p>
-
-<p>Let’s break these down into sub-regions again:</p>
-
-<ul>
-<li>Old South: Atlanta, Charlotte, Raleigh, Richmond</li>
-<li>Florida: Miami, Orlando</li>
-<li>Texas: Dallas, Houston</li>
-</ul>
-
-<p>I think both the Florida and Texas regions are a coin-flip, but the PLL really should have one city in each of these states. In the Old South, I’d lean towards Atlanta. If it’s good enough for the <a href="https://en.wikipedia.org/wiki/SEC_Championship_Game">SEC football championship game</a>, it ought to be good enough for the PLL.</p>
-
-<p><strong>Final Cities: Atlanta, Houston, Orlando</strong></p>
-
-<h2 id="midwest">Midwest</h2>
-
-<p>Cities: Chicago, Cincinnati, Columbus, Minneapolis, St. Louis</p>
-
-<p>Minnesota and Ohio are the only states in this region with <a href="https://www.uslacrosse.org/sites/default/files/public/documents/about-us-lacrosse/participation-survey-2017.pdf">more than 10,000 youth lacrosse participants</a>, so they each get a weekend. In Ohio, I’ll give Cincinnati the nod solely because it’s a shorter drive from where I’m typing in Louisville.</p>
-
-<p>That leaves us with a choice between Chicago and St. Louis - the Second City makes sense here.</p>
-
-<p><strong>Final Cities: Chicago, Cincinnati, Minneapolis</strong></p>
-
-<h2 id="west">West</h2>
-
-<p>The PLL headquarters are in Los Angeles, so it’s fairly obvious that it’ll be on the final list. Since I also think there ought to be a maximum of only one city per state, that rules out San Francisco.</p>
-
-<p>This leaves two distinct areas:</p>
-
-<ul>
-<li>Pacific Northwest: Portland, Seattle, Vancouver</li>
-<li>Mountains: Denver, Salt Lake City</li>
-</ul>
-
-<p>I’m not super-familiar with the lacrosse scene in the Pacific Northwest, so let’s give it to the lone Canadian city. In the Mountains, I could see this going either way, but I’ll go with the home of the nation’s <a href="https://utahutes.com/news/2017/6/15/general-utah-adds-mens-lacrosse-as-an-ncaa-sport.aspx">newest DI men’s lacrosse program, Utah</a>.</p>
-
-<p><strong>Final Cities: Los Angeles, Salt Lake City, Vancouver</strong></p>
-
-<h2 id="closing-thoughts">Closing Thoughts</h2>
-
-<p>My choices are certainly not as thougthful as what the PLL will eventually decide, but it was a fun exercise. It will be interesting to see how the final sites are balanced between the four regions that I identified. It would be shocking if there were not three cities in both the West and the South, but I would not be shocked if there were only two in the Midwest and five in the Northeast.</p>
-
-<p>Regardless of the final outcome, I&rsquo;m looking forward to the announcements of the final schedule, the teams, and most importantly, the first games in June.</p>
-
-<p><img src="/files/pll-cities.jpg" alt="pll-cities" /></p>
 
       
     </div>

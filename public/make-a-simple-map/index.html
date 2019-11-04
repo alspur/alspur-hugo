@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="generator" content="Hugo 0.30.2" />
+
+
+<title>Making an editable map for PowerPoint with R - @alspur</title>
+<meta property="og:title" content="Making an editable map for PowerPoint with R - @alspur">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/alspur_logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/projects/">Projects</a></li>
+    
+    <li><a href="/archive/">Archive</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+
+    <h2 class="article-title">Making an editable map for PowerPoint with R
+    
+      
+    
+    </h1>
+    
+    
+    <div class="article-date">November 4, 2019</div>
+    
+    
+
+    <div class="article-content">
+      <p>Recently, I needed to make a map that would color-code states and overlay some points to represent data for specific metro areas. My initial reaction to graphic creation is to always start with R and use <code>ggplot2</code>, but the final product also needed to be editable as a PowerPoint graphic.</p>
+
+<p>This was the perfect opportunity to try a few R packages that were new to me: the <a href="https://github.com/UrbanInstitute/urbnmapr"><code>urbnmapr</code></a> package from the Urban Institute for map-making and the <a href="https://davidgohel.github.io/officer/"><code>officer</code></a> and <a href="https://rdrr.io/cran/rvg/"><code>rvg</code></a> packages to export data from R into Microsoft Office document formats (including <code>.pptx</code>).</p>
+
+<p>Using a <a href="https://medium.com/@urban_institute/how-to-create-state-and-county-maps-easily-in-r-577d29300bb2">great tutorial</a> on how to use <code>urbnmapr</code>, I was able to produce the map I wanted pretty quickly. All it took was a simple <code>left_join()</code> to merge my state data with the <code>urbnmapr</code> data, then all I had to do was use <code>geom_polygon</code> and <code>geom_point</code> to map my two layers of data.</p>
+
+<p>I recreated a version of the map I made using two tables of data:</p>
+
+<ul>
+<li>A list of states, coded as states I&rsquo;ve called home, visited, or never been</li>
+<li>A list of coordinates indicating where I&rsquo;ve done postsecondary work</li>
+</ul>
+
+<p>It took me about 15 minutes to pull this together - most of it was spent actually creating the data:</p>
+
+<p><img src="https://raw.githubusercontent.com/alspur/simple-map-for-ppt/master/place_ps_map.png" alt="" /></p>
+
+<p>Most of the time, I’m exporting the plot as a static <code>.png</code> file, but thanks to the <code>officer</code> and <code>rvg</code> packages, I was able to export my <code>ggplot</code> object to a slide in a <code>.pptx</code> deck:</p>
+
+<pre><code>library(officer)
+library(rvg)
+
+read_pptx() %&gt;%
+  add_slide(layout = &quot;Title and Content&quot;, master = &quot;Office Theme&quot;) %&gt;%
+# this is where you call your ggplot object (here it's `place_ps_map`)
+  ph_with_vg(code = print(place_ps_map), type = &quot;body&quot;) %&gt;% 
+# this is where you provide the filename/location for your new ppt slide
+  print(target = &quot;place_ps_map.pptx&quot;)
+</code></pre>
+
+<p>That&rsquo;s it! From that point, I was able to open the PowerPoint deck and play around with every part of my map. I &ldquo;ungrouped&rdquo; all of the elements, then re-grouped the legend and map elements as separate groups to make re-positioning really easy.</p>
+
+<p><img src="https://raw.githubusercontent.com/alspur/simple-map-for-ppt/master/ungroup.png" alt="" /></p>
+
+<p>If you want to check out the code and data I used, it&rsquo;s available on <a href="https://github.com/alspur/simple-map-for-ppt">Github</a>.</p>
+
+    </div>
+    
+  </article>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          
+            <a href = "http://www.github.com/alspur"><font color="3c3e40"><i class="fa fa-github-alt"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.linkedin.com/in/alspur"><font color="3c3e40"><i class="fa fa-linkedin"></i></a></font>
+          </li>
+          <li>
+            <a href = "mailto:alex.spurrier@gmail.com"><font color="3c3e40"><i class="fa fa-envelope-o"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.instagram.com/alspur"><font color="3c3e40"><i class="fa fa-instagram"></i></a></font>
+          </li>
+          <li>
+            <a href = "http://www.twitter.com/alspur"><font color="3c3e40"><i class="fa fa-twitter"></i></a></font>
+          </li>
+        
+            
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-56149120-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+
