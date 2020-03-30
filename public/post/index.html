@@ -76,9 +76,9 @@
 
 <p>We don&rsquo;t know what the total impact of the Covid-19 pandemic will look like. What we do know is that our economy, communities, families, and lives are disrupted in ways they haven&rsquo;t been for a century — including schools.</p>
 
-<p>As I write this blog on March 30, school systems in 47 states closed their doors to students, with the remaining three states of Iowa, Maine, and Nebraska opting to allow closure decisions to be made at the district level. Education Week produced <a href="https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html">a helpful map and spreadsheet of closure-related information</a>, indicating when these decisions were made, how long schools are expected to be closed (for now), and information about the total number of schools and students in each state.</p>
+<p>As I write this blog on March 30, school systems in 47 states have closed their doors to students, with the remaining three states of Iowa, Maine, and Nebraska opting to allow closure decisions to be made at the district level. Education Week produced <a href="https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html">a helpful map and spreadsheet of closure-related information</a>, indicating when these decisions were made, how long schools are expected to be closed (for now), and information about the total number of schools and students in each state.</p>
 
-<p>The past three weeks have been a blur of news about school closures, but this data from EdWeek really helped to clarify the timeline of events for me. I thought displaying this information visually might be helpful to get a better sense of when and where statewide closure decisions happened over the past few weeks, so I decided to make my first gif using R.</p>
+<p>The past three weeks have been a blur of news about school closures, but this data from EdWeek really helped to clarify the timeline of events for me. I thought displaying this information visually might help people to get a better sense of when and where statewide closure decisions happened over the past few weeks, so I decided to make my first gif using R.</p>
 
 <h2 id="how-i-made-it">How I made it</h2>
 
@@ -88,7 +88,7 @@
 
 <p>It&rsquo;s easy to solve with a little math, but it still annoys me. Thankfully, <a href="http://sfirke.github.io/janitor/">Sam Firke&rsquo;s <code>janitor</code> package</a> solves this problem with one function.</p>
 
-<p>Once the date formatting issue was resolved, it was just a matter of creating a closure &ldquo;status&rdquo; variable for each day from March 15 to March 25, reshaping the data to make it &ldquo;long&rdquo;, and cleaning up the special cases of the three states without a statewide closure decision.</p>
+<p>Once the date formatting issue was resolved, it was just a matter of creating a closure &ldquo;status&rdquo; variable for each day from March 15 to March 25, reshaping the data to make it &ldquo;long,&rdquo; and cleaning up the special cases of the three states without a statewide closure decision.</p>
 
 <p>When it came time to render the gif on my four-year-old <a href="https://www.caseyliss.com/2017/6/25/macbook-adorable">MacBook Adorable</a>, it took less than a minute. Not great, but not too shabby.</p>
 
