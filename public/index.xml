@@ -6,10 +6,20 @@
     <description>Recent content on @alspur</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Nov 2019 15:12:56 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 19:25:34 -0500</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Statewide school closures as a gif</title>
+      <link>/edweek-covid-data/</link>
+      <pubDate>Mon, 30 Mar 2020 19:25:34 -0500</pubDate>
+      
+      <guid>/edweek-covid-data/</guid>
+      <description>We don&amp;rsquo;t know what the total impact of the Covid-19 pandemic will look like. What we do know is that our economy, communities, families, and lives are disrupted in ways they haven&amp;rsquo;t been for a century — including schools.
+As I write this blog on March 30, school systems in 47 states closed their doors to students, with the remaining three states of Iowa, Maine, and Nebraska opting to allow closure decisions to be made at the district level.</description>
+    </item>
     
     <item>
       <title>Making an editable map for PowerPoint with R</title>

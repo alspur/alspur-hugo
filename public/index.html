@@ -63,6 +63,53 @@
 
     
     
+     <h2 class="archive-title">March 30, 2020</h2>
+
+    
+    <article class="article">
+      <a href="/edweek-covid-data/" class="archive-item-link">Statewide school closures as a gif</a>
+      
+       
+     
+     <div class="article-content">
+        
+     
+
+<p>We don&rsquo;t know what the total impact of the Covid-19 pandemic will look like. What we do know is that our economy, communities, families, and lives are disrupted in ways they haven&rsquo;t been for a century — including schools.</p>
+
+<p>As I write this blog on March 30, school systems in 47 states closed their doors to students, with the remaining three states of Iowa, Maine, and Nebraska opting to allow closure decisions to be made at the district level. Education Week produced <a href="https://www.edweek.org/ew/section/multimedia/map-coronavirus-and-school-closures.html">a helpful map and spreadsheet of closure-related information</a>, indicating when these decisions were made, how long schools are expected to be closed (for now), and information about the total number of schools and students in each state.</p>
+
+<p>The past three weeks have been a blur of news about school closures, but this data from EdWeek really helped to clarify the timeline of events for me. I thought displaying this information visually might be helpful to get a better sense of when and where statewide closure decisions happened over the past few weeks, so I decided to make my first gif using R.</p>
+
+<h2 id="how-i-made-it">How I made it</h2>
+
+<p>The <a href="https://gganimate.com"><code>gganimate</code> package</a> was pretty easy to work with, and other tools like <a href="https://lubridate.tidyverse.org"><code>lubridate</code></a> and <a href="https://urbaninstitute.github.io/urbnmapr/index.html"><code>urbnmapr</code></a> helped make data wrangling and mapping a breeze. One of my biggest Excel peevs reared its ugly head: dates that get converted to an inscrutable string of numbers.</p>
+
+<p><img src="https://raw.githubusercontent.com/alspur/edweek-covid-closures/master/icky_excel_dates.png" alt="" /></p>
+
+<p>It&rsquo;s easy to solve with a little math, but it still annoys me. Thankfully, <a href="http://sfirke.github.io/janitor/">Sam Firke&rsquo;s <code>janitor</code> package</a> solves this problem with one function.</p>
+
+<p>Once the date formatting issue was resolved, it was just a matter of creating a closure &ldquo;status&rdquo; variable for each day from March 15 to March 25, reshaping the data to make it &ldquo;long&rdquo;, and cleaning up the special cases of the three states without a statewide closure decision.</p>
+
+<p>When it came time to render the gif on my four-year-old <a href="https://www.caseyliss.com/2017/6/25/macbook-adorable">MacBook Adorable</a>, it took less than a minute. Not great, but not too shabby.</p>
+
+<p><img src="https://raw.githubusercontent.com/alspur/edweek-covid-closures/master/covid_state_closures.gif" alt="" /></p>
+
+<p>As always, my <a href="https://github.com/alspur/edweek-covid-closures">code for this project is on GitHub</a>.</p>
+
+<h2 id="closing-thoughts">Closing thoughts</h2>
+
+<p>I&rsquo;m satisfied with my first gif and it really was pretty easy with <code>gganimate</code>. My hope is that this gif helps a few people understand a small slice of what&rsquo;s happening to our students, educators, and schools right now.</p>
+
+<p>Stay safe, stay home, and stay healthy. ❤️</p>
+
+      
+    </div>
+      </article> 
+      <hr>
+    
+    
+    
      <h2 class="archive-title">November 4, 2019</h2>
 
     
@@ -305,46 +352,6 @@ read_pptx() %&gt;%
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 </ol>
 </div>
-
-      
-    </div>
-      </article> 
-      <hr>
-    
-    
-    
-     <h2 class="archive-title">January 19, 2019</h2>
-
-    
-    <article class="article">
-      <a href="/untapped-potential/" class="archive-item-link">Untapped Potential</a>
-      
-      
-      
-      
-      
-      
-      
-      <a href = "https://apps.bostonglobe.com/magazine/graphics/2019/01/17/valedictorians/untapped-potential/"><font color="3c3e40"><i class="fa fa-link" 
-      title="directlink"></i></a></font>
-      
-     
-      
-      
-     
-     <div class="article-content">
-        
-     <p>An incredible special report from the Boston Globe:</p>
-
-<blockquote>
-<p>Over the past year, the Globe has tracked down 93 of the 113 valedictorians who appeared in the paper’s first three &ldquo;Faces of Excellence&rdquo; features from 2005 to 2007. We wanted to know, more than a decade later, how the stories of Boston’s best and brightest were turning out.</p>
-</blockquote>
-
-<p>The <a href="https://apps.bostonglobe.com/magazine/graphics/2019/01/17/valedictorians/">entire collection of articles, graphics, and data</a> paints a challenging and inspiring picture of the obstacles facing the &ldquo;best and brightest&rdquo; students in Boston’s public schools. Many of the students faced financial and/or social struggles when they first entered college, but some also found themselves <em>academically</em> unprepared for college work.</p>
-
-<p>Some of the valedictorians - notably, the ones from selective &ldquo;exam schools&rdquo; - fared better than other public school graduates. That there could be such a wide variation in the quality of academic preparation among schools’ <em>highest-performing students</em> is extremely disappointing, but not surprising.</p>
-
-<p>Much work remains to be done to help students navigate the transition from high school to college, both financially and socially, but K-12 leaders and policymakers should at a bare minimum ensure that high school coursework can prepare students <em>academically</em> for their next step. That may mean entering the workforce or military, attending a community college, or enrolling in a highly selective university, but no student should have their potential limited by policymakers’ lowered expectations and/or unchallenging curricular options.</p>
 
       
     </div>

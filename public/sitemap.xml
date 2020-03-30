@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/edweek-covid-data/</loc>
+    <lastmod>2020-03-30T19:25:34-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/make-a-simple-map/</loc>
     <lastmod>2019-11-04T15:12:56-05:00</lastmod>
   </url>
@@ -244,7 +249,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-11-04T15:12:56-05:00</lastmod>
+    <lastmod>2020-03-30T19:25:34-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -378,7 +383,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-11-04T15:12:56-05:00</lastmod>
+    <lastmod>2020-03-30T19:25:34-05:00</lastmod>
     <priority>0</priority>
   </url>
   
