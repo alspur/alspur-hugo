@@ -2,7 +2,7 @@
 title: Refocusing the Priorities of Accountability
 date: 2020-08-23T12:00:00-05:00
 link: https://bellwethereducation.org/publication/updated-making-next-year-count-equity-school-accountability
-  tags:
+tags:
   - linked
 ---
 

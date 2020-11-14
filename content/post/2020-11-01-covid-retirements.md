@@ -2,7 +2,7 @@
 title: Did School System Retirements Spike in 2020?
 date: 2020-11-01T12:00:00-05:00
 link: https://www.the74million.org/article/analysis-did-school-system-retirements-spike-in-2020-data-from-7-state-pension-plans-show-theyve-actually-decreased/
-  tags:
+tags:
   - linked
 ---
 
