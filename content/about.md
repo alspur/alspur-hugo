@@ -3,7 +3,9 @@ title: "About"
 date: "2016-05-05T21:48:51-07:00"
 ---
 
-**@alspur** is written and maintained by Alex Spurrier. Alex is an education policy wonk currently working for [Bellwether Education Partners](https://bellwethereducation.org). He is a former [Strategic Data Project Fellow](http://sdp.cepr.harvard.edu)[^1] and is a proud graduate of [Bethel University](http://www.bethel.edu) and [Trinity College](http://www.trincoll.edu). In addition to education-related issues, Alex is interested in  politics, cities, lacrosse, and his beloved New England Patriots. 
+**@alspur** is written and maintained by Alex Spurrier, an education policy wonk at [Bellwether Education Partners](https://bellwethereducation.org) and a [50CAN National Voices Fellow](https://50can.org/programs/fellowships/2021cohort/).
+
+Previously, Alex was a [Strategic Data Project Fellow](http://sdp.cepr.harvard.edu)[^1] working at the Kentucky Department of Education. He is a proud graduate of [Bethel University](http://www.bethel.edu) and [Trinity College](http://www.trincoll.edu). In addition to education policy, Alex is interested in politics, lacrosse, and his beloved New England Patriots. 
 
 ### Link Posts
 
